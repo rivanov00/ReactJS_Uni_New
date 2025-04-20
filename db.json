@@ -1,0 +1,10 @@
+{
+    "users": [
+      { "id": 1, "username": "testuser", "password": "password123" }
+    ],
+    "dataItems": [
+      { "id": 1, "name": "uni1 item A", "description": "This is the first sample data item." },
+      { "id": 2, "name": "uni2 Item B", "description": "This is the second sample data item." },
+      { "id": 3, "name": "uni Item C", "description": "This is the third sample data item." }
+    ]
+  }
