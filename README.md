@@ -1,3 +1,4 @@
+Steps needed :
 Course work and final exam criteria
 
 The following functionalities are to be used in the developing of the application:
@@ -17,3 +18,10 @@ The web application should contain:
 6.	The theme of the application and any other content and functionalities is up to the developer (you).
 7.	The exam consist of presenting the application (make a presentation), all its functionalities (the visual representation will affect the grading) and a record of all the GitHub commits (as evidence of authenticity of the application. Keep in mind that all different states should be in different commits).
 8.	The application should be added in the course (except node_modules) and a link to your GitHub project.
+
+
+How to install and run the project
+
+Apps required for the project to run
+npm install react-router-dom
+npm install json-server --save-dev
