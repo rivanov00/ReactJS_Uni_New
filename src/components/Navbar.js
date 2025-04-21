@@ -7,13 +7,13 @@ function Navbar() {
     <nav className="navbar">
       <ul>
         <li>
-          <NavLink to="/" activeClassName="active">Home</NavLink>
+          <NavLink to="/" activeclassName="active">Home</NavLink>
         </li>
         <li>
-          <NavLink to="/login" activeClassName="active">Login</NavLink>
+          <NavLink to="/login" activeclassName="active">Login</NavLink>
         </li>
         <li>
-          <NavLink to="/register" activeClassName="active">Register</NavLink>
+          <NavLink to="/register" activeclassName="active">Register</NavLink>
         </li>
       </ul>
 

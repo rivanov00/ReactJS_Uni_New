@@ -4,7 +4,7 @@ function Home() {
   return (
     <div>
       <h2>Welcome!</h2>
-      <p>This is the main content area where data will be loaded dynamically after you log in.</p>
+      <p>Data will be displayed here once logged in . </p>
     </div>
   );
 }
