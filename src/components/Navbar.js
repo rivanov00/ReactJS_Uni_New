@@ -1,23 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import './Navbar.css';
 
 function Navbar() {
   return (
-    <nav>
-      <h1>RadostinIvanovFN320</h1>
+    <nav className="navbar">
       <ul>
         <li>
-          {/* link to homepage (create later) */}
-          <Link to="/">Home</Link>
+          <NavLink to="/" activeClassName="active">Home</NavLink>
         </li>
         <li>
-          <Link to="/login">Login</Link>
+          <NavLink to="/login" activeClassName="active">Login</NavLink>
         </li>
         <li>
-          <Link to="/register">Register</Link>
+          <NavLink to="/register" activeClassName="active">Register</NavLink>
         </li>
-        {/* here we can add more navigation links if needed */}
       </ul>
+
+      <h1>RadostinIvanovFN320</h1>
     </nav>
   );
 }

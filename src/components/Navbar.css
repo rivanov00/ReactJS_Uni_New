@@ -1,0 +1,40 @@
+/* src/components/Navbar.css */
+.navbar {
+    background-color: #f0f0f0; /* Light grey background */
+    padding: 10px 20px; /* Some padding */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space out title and links */
+    align-items: center; /* align items */
+  }
+  
+  .navbar h1 {
+    margin: 0; /* default margin */
+    font-size: 1.5em; /* font size */
+  }
+  
+  .navbar ul {
+    list-style: none; /* Remove bullet points */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Arrange links in a row */
+  }
+  
+  .navbar li {
+    margin-left: 20px; /* Space between links */
+  }
+  
+  .navbar a {
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Dark grey text color */
+    font-weight: bold; /* Bold text */
+  }
+  
+  .navbar a:hover {
+    color: #007bff; /* Change color on hover */
+  }
+  
+  /* Optional: Style for the active link using NavLink */
+  .navbar a.active {
+    color: #0056b3; /* Different color for the active link */
+    border-bottom: 2px solid #0056b3; /* Underline active link */
+  }
