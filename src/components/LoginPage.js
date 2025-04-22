@@ -1,22 +1,44 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
 function LoginPage() {
   const [usernameOrEmail, setUsernameOrEmail] = useState('');
   const [password, setPassword] = useState('');
-
-  const handleSubmit = (event) => {
+  const { login } = useAuth();
+  const navigate = useNavigate();
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    console.log('Login form submitted:', {
-      usernameOrEmail,
-      password,
-    });
+    console.log('Attempting login with:', { usernameOrEmail });
 
-    // API call for authentication will go here in Phase 3
-    // and then call the `login` function from your AuthContext if successful.
+    try {
+      const response = await fetch('http://localhost:5000/users');
+      if (!response.ok) {
+        console.error('API Error:', response.status, response.statusText);
+        alert('An error occurred while trying to log in. Please try again.');
+        return;
+      }
+      const users = await response.json();
+      const foundUser = users.find(user =>
+        (user.username === usernameOrEmail || user.email === usernameOrEmail) && user.password === password
+      );
+
+      if (foundUser) {
+        login(foundUser);
+        alert('Login successful!');
+        navigate('/');
+
+      } else {
+        alert('Invalid username/email or password.');
+      }
+
+    } catch (error) {
+      console.error('Login attempt failed:', error);
+      alert('An error occurred during login.');
+    }
+    setPassword('');
   };
-
   return (
     <div>
       <h2>Login Page</h2>
