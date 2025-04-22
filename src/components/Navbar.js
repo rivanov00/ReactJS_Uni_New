@@ -14,11 +14,12 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      {/* Place the H1 (site name) BEFORE the UL (links) */}
+      {/* Place the H1 (site name) BEFORE the UL (links) for left/right layout */}
       <h1>
+         {/* Add your logo image tag here */}
+         {/* The src path is relative to the 'public' folder */}
+         <img src="/logo.png" alt="Pokupki.TE Logo" className="site-logo" /> {/* Added img tag and class */}
          Pokupki.TE {/* Your site name */}
-         {/* Add your logo image tag here later if you have one */}
-         {/* <img src="/path/to/your/logo.png" alt="Pokupki.TE Logo" className="logo" /> */}
       </h1>
 
       <ul>
