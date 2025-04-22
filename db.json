@@ -1,17 +1,17 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "testuser",
       "password": "password123"
     },
     {
-      "id": 2,
+      "id": "2",
       "username": "rado",
       "password": "rado123"
     },
     {
-      "id": 3,
+      "id": "3",
       "username": "teacher",
       "password": "teacher123"
     },
@@ -35,35 +35,165 @@
     }
   ],
   "shoppinglist": [
-    { "id": "item1", "name": "Milk", "quantity": 1 },
-    { "id": "item2", "name": "Bread", "quantity": 1 },
-    { "id": "item3", "name": "Eggs", "quantity": 1 },
-    { "id": "item4", "name": "Cheese", "quantity": 1 },
-    { "id": "item5", "name": "Yogurt", "quantity": 1 },
-    { "id": "item6", "name": "Pasta", "quantity": 1 },
-    { "id": "item7", "name": "Rice", "quantity": 1 },
-    { "id": "item8", "name": "Onions", "quantity": 1 },
-    { "id": "item9", "name": "Garlic", "quantity": 1 },
-    { "id": "item10", "name": "Chopped Tomatoes (canned)", "quantity": 1 },
-    { "id": "item11", "name": "Chicken Breasts", "quantity": 1 },
-    { "id": "item12", "name": "Tuna (canned)", "quantity": 1 },
-    { "id": "item13", "name": "Salmon", "quantity": 1 },
-    { "id": "item14", "name": "Potatoes", "quantity": 1 },
-    { "id": "item15", "name": "Bananas", "quantity": 1 },
-    { "id": "item16", "name": "Apples", "quantity": 1 },
-    { "id": "item17", "name": "Carrots", "quantity": 1 },
-    { "id": "item18", "name": "Broccoli", "quantity": 1 },
-    { "id": "item19", "name": "Spinach", "quantity": 1 },
-    { "id": "item20", "name": "Coffee", "quantity": 1 },
-    { "id": "item21", "name": "Tea", "quantity": 1 },
-    { "id": "item22", "name": "Cereal", "quantity": 1 },
-    { "id": "item23", "name": "Oats", "quantity": 1 },
-    { "id": "item24", "name": "Peanut Butter", "quantity": 1 },
-    { "id": "item25", "name": "Olive Oil", "quantity": 1 },
-    { "id": "item26", "name": "Salt", "quantity": 1 },
-    { "id": "item27", "name": "Pepper", "quantity": 1 },
-    { "id": "item28", "name": "Sugar", "quantity": 1 },
-    { "id": "item29", "name": "Flour", "quantity": 1 },
-    { "id": "item30", "name": "Butter", "quantity": 1 }
+    {
+      "id": "item1",
+      "name": "Milk",
+      "quantity": 1
+    },
+    {
+      "id": "item2",
+      "name": "Bread",
+      "quantity": 1
+    },
+    {
+      "id": "item3",
+      "name": "Eggs",
+      "quantity": 1
+    },
+    {
+      "id": "item4",
+      "name": "Cheese",
+      "quantity": 1
+    },
+    {
+      "id": "item5",
+      "name": "Yogurt",
+      "quantity": 1
+    },
+    {
+      "id": "item6",
+      "name": "Pasta",
+      "quantity": 1
+    },
+    {
+      "id": "item7",
+      "name": "Rice",
+      "quantity": 1
+    },
+    {
+      "id": "item8",
+      "name": "Onions",
+      "quantity": 1
+    },
+    {
+      "id": "item9",
+      "name": "Garlic",
+      "quantity": 1
+    },
+    {
+      "id": "item10",
+      "name": "Chopped Tomatoes (canned)",
+      "quantity": 1
+    },
+    {
+      "id": "item11",
+      "name": "Chicken Breasts",
+      "quantity": 1
+    },
+    {
+      "id": "item12",
+      "name": "Tuna (canned)",
+      "quantity": 1
+    },
+    {
+      "id": "item13",
+      "name": "Salmon",
+      "quantity": 1
+    },
+    {
+      "id": "item14",
+      "name": "Potatoes",
+      "quantity": 1
+    },
+    {
+      "id": "item15",
+      "name": "Bananas",
+      "quantity": 1
+    },
+    {
+      "id": "item16",
+      "name": "Apples",
+      "quantity": 1
+    },
+    {
+      "id": "item17",
+      "name": "Carrots",
+      "quantity": 1
+    },
+    {
+      "id": "item18",
+      "name": "Broccoli",
+      "quantity": 1
+    },
+    {
+      "id": "item19",
+      "name": "Spinach",
+      "quantity": 1
+    },
+    {
+      "id": "item20",
+      "name": "Coffee",
+      "quantity": 1
+    },
+    {
+      "id": "item21",
+      "name": "Tea",
+      "quantity": 1
+    },
+    {
+      "id": "item22",
+      "name": "Cereal",
+      "quantity": 1
+    },
+    {
+      "id": "item23",
+      "name": "Oats",
+      "quantity": 1
+    },
+    {
+      "id": "item24",
+      "name": "Peanut Butter",
+      "quantity": 1
+    },
+    {
+      "id": "item25",
+      "name": "Olive Oil",
+      "quantity": 1
+    },
+    {
+      "id": "item26",
+      "name": "Salt",
+      "quantity": 1
+    },
+    {
+      "id": "item27",
+      "name": "Pepper",
+      "quantity": 1
+    },
+    {
+      "id": "item28",
+      "name": "Sugar",
+      "quantity": 1
+    },
+    {
+      "id": "item29",
+      "name": "Flour",
+      "quantity": 1
+    },
+    {
+      "id": "item30",
+      "name": "Butter",
+      "quantity": 1
+    },
+    {
+      "id": "fe2d",
+      "name": "Milk",
+      "quantity": 5
+    },
+    {
+      "id": "1922",
+      "name": "test",
+      "quantity": 55
+    }
   ]
 }
