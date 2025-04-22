@@ -1,28 +1,29 @@
 .navbar {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 10px;
+  left: 0px;
+  right: 15px;
   width: 100%;
   z-index: 1000;
-  background-color: #ff002c;
-  color: white;
-  padding: 10px 20px;
+  background-color: #054D69;
+  color: 427AA1;
+  padding: 15px 15px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 20px;
+  gap: 1450px;
   flex-wrap: wrap;
   transition: background-color 0.3s ease;
 }
 
 .navbar:hover {
-  background-color: #a9011a;
+  background-color: #A5BE00;
 }
 
 .navbar h1 {
   margin: 0;
   font-size: 1.5em;
-  color: white;
+  color: #679436;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -32,8 +33,8 @@
 }
 
 .navbar h1 img.site-logo {
-    height: 40px;
-    width: 200px;
+    height: 50px;
+    width: 180px;
     vertical-align: middle;
 }
 
@@ -56,11 +57,11 @@
 }
 
 .navbar a:hover {
-  color: #ddd;
+  color: #14115e;
 }
 
 .navbar a.active {
-  color: yellow;
+  color: #679436;
   border-bottom: 2px solid yellow;
 }
 
@@ -77,6 +78,6 @@
 }
 
 .nav-logout-button:hover {
-  background-color: white;
+  background-color: rgb(29, 3, 3);
   color: #333;
 }
