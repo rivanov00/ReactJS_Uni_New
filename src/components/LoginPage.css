@@ -1,0 +1,97 @@
+/* src/components/LoginPage.css */
+
+/* Page background and overall layout */
+.login-container {
+    /* Using the same background color as register-container */
+    background-color: #97B6CE;
+    min-height: 70vh; /* Ensure it takes up at least 70% of the viewport height */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    font-family: 'Segoe UI', sans-serif;
+    padding: 0px; /* Remove default padding */
+    /* Add padding-top to account for the fixed Navbar */
+    /* You might need to adjust this value based on your Navbar's height */
+    padding-top: 70px; /* Example: Adjust if your Navbar is taller */
+}
+
+/* Login title */
+.login-title {
+    font-size: 4rem;
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Form styling */
+.login-form {
+    /* Using the same form background color as register-form */
+    background-color: #054D69;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 50px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px; /* Limit the maximum width of the form */
+    gap: 20px; /* Space between form groups */
+}
+
+/* Labels */
+.login-label {
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 0px;
+    display: block; /* Make labels block elements */
+}
+
+/* Input fields */
+.login-input {
+    width: 100%;
+    /* Padding sets top/bottom to 10px, left/right to 15px */
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 8px;
+    /* --- Removed: padding-right: 0px; --- */
+    /* Removing this allows the 15px right padding from the 'padding' shorthand to apply */
+    border: none;
+    background-color: #e0e0e0; /* Light grey background for inputs */
+    box-sizing: border-box; /* Ensure padding is included in the element's total width */
+}
+
+/* Login button */
+.login-button {
+    /* Using the same button style as register-button */
+    background-color: #679436;
+    color: #000;
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.login-button:hover {
+    /* Using the same button hover style as register-button */
+    background-color: #8ebe5b;
+}
+
+/* Link to register */
+.register-link {
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #fff;
+    text-align: center;
+}
+
+.register-link a {
+    font-weight: bold;
+    color: #679436; /* Using the same link color as register page */
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}

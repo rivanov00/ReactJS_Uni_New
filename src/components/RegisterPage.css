@@ -1,4 +1,3 @@
-/* Page background and overall layout */
 .register-container {
     background-color: #97B6CE;
     min-height: 70vh;
@@ -8,18 +7,16 @@
     justify-content: center;
     font-family: 'Segoe UI', sans-serif;
     padding: 0px;
-  }
-  
-  /* Register title */
-  .register-title {
+}
+
+.register-title {
     font-size: 4rem;
     color: #fff;
     margin-bottom: 20px;
     font-weight: bold;
-  }
-  
-  /* Form styling */
-  .register-form {
+}
+
+.register-form {
     background-color: #054D69;
     padding: 30px 40px;
     border-radius: 12px;
@@ -29,29 +26,26 @@
     width: 100%;
     max-width: 400px;
     gap: 20px;
-  }
-  
-  /* Labels */
-  .register-label {
+}
+
+.register-label {
     font-size: 1.1rem;
     color: #fff;
     margin-bottom: 0px;
     display: block;
-  }
-  
-  /* Input fields */
-  .register-input {
+}
+
+.register-input {
     width: 100%;
     padding: 10px 15px;
     font-size: 1rem;
     border-radius: 8px;
-    padding-right: 0px;
     border: none;
     background-color: #e0e0e0;
-  }
-  
-  /* Register button */
-  .register-button {
+    box-sizing: border-box;
+}
+
+.register-button {
     background-color: #679436;
     color: #000;
     font-weight: bold;
@@ -60,27 +54,25 @@
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.2s ease;
-  }
-  
-  .register-button:hover {
+}
+
+.register-button:hover {
     background-color: #8ebe5b;
-  }
-  
-  /* Link to login */
-  .login-link {
+}
+
+.login-link {
     margin-top: 15px;
     font-size: 1rem;
     color: #fff;
     text-align: center;
-  }
-  
-  .login-link a {
+}
+
+.login-link a {
     font-weight: bold;
     color: #679436;
     text-decoration: none;
-  }
-  
-  .login-link a:hover {
+}
+
+.login-link a:hover {
     text-decoration: underline;
-  }
-  
+}
