@@ -1,62 +1,85 @@
 .home-container {
+  background-color: #97B6CE;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
   padding: 20px;
-  max-width: 600px;
-  margin: 20px auto;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #f9f9f9;
+  padding-top: 90px;
 }
 
-.home-container h2 {
-  text-align: center;
-  color: #333;
+.home-title {
+  font-size: 2.5rem;
+  color: #fff;
   margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
 }
 
 .add-item-form {
+  background-color: #679436;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.2);
   display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-  padding: 15px;
-  border: 1px solid #eee;
-  border-radius: 5px;
-  background-color: #fff;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 500px;
+  gap: 15px;
+  margin-bottom: 30px;
+  align-items: center;
 }
 
 .add-item-form input {
   flex-grow: 1;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #e0e0e0;
+  box-sizing: border-box;
+}
+
+.add-item-form input[type="number"] {
+ max-width: 80px;
+ flex-grow: 0;
 }
 
 .add-button {
-  padding: 8px 15px;
-  background-color: #5cb85c;
-  color: white;
+  background-color: #054D69;
+  color: #000;
+  font-weight: bold;
+  padding: 10px 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.2s ease;
 }
 
 .add-button:hover {
-  background-color: #4cae4c;
+  background-color: #A5BE00;
 }
 
 .shopping-list {
   list-style: none;
   padding: 0;
   margin: 0;
+  width: 100%;
+  max-width: 500px;
+  background-color: #679436;
+  border-radius: 12px;
+  box-shadow: 0 0 70px rgba(0,0,0,0.2);
+  overflow: hidden;
 }
 
 .list-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 15px;
-  border-bottom: 1px solid #eee;
-  background-color: #fff;
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
 }
 
 .list-item:last-child {
@@ -65,28 +88,35 @@
 
 .item-details {
   flex-grow: 1;
-  margin-right: 10px;
+  margin-right: 15px;
 }
 
 .item-details h3 {
   margin: 0 0 5px 0;
-  color: #555;
+  color: #fff;
+  font-size: 1.2em;
 }
 
 .item-details p {
   margin: 0;
-  color: #777;
+  color: #e0e0e0;
   font-size: 0.9em;
 }
 
+.item-actions {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
 .item-actions button {
-  margin-left: 5px;
-  padding: 5px 10px;
+  padding: 8px 15px;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
   font-size: 0.9em;
+  font-weight: bold;
 }
 
 .edit-button {
@@ -109,21 +139,30 @@
 
 .edit-item-form {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   align-items: center;
   flex-grow: 1;
 }
 
 .edit-item-form input {
-  padding: 5px;
+  padding: 8px 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
   flex-grow: 1;
+  font-size: 1em;
+  box-sizing: border-box;
 }
 
 .save-button {
   background-color: #337ab7;
   color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-weight: bold;
 }
 
 .save-button:hover {
@@ -133,13 +172,22 @@
 .cancel-button {
   background-color: #ccc;
   color: #333;
+  /* Corrected padding from 99 to 8px */
+  padding: 8px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-weight: bold;
 }
 
 .cancel-button:hover {
   background-color: #bbb;
 }
 
-.home-container p {
+.empty-list-message {
   text-align: center;
   color: #555;
+  margin-top: 20px;
+  font-size: 1.1em;
 }

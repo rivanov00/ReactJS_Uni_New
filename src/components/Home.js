@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Home.css';
+import { useAuth } from '../context/AuthContext'; // Import useAuth to get user info
 
 function Home() {
   const [shoppingListItems, setShoppingListItems] = useState([]);
@@ -9,6 +10,9 @@ function Home() {
   const [editingItemId, setEditingItemId] = useState(null);
   const [editingItemName, setEditingItemName] = useState('');
   const [editingItemQuantity, setEditingItemQuantity] = useState(1);
+
+  // Get the logged-in user from AuthContext
+  const { user } = useAuth();
 
   useEffect(() => {
     const fetchShoppingList = async () => {
@@ -31,14 +35,14 @@ function Home() {
     event.preventDefault();
 
     if (!newItemName.trim()) {
-      alert('Item name cannot be empty.');
+      alert('Item name cannot be empty.'); // Consider using state for messages
       return;
     }
 
-     if (newItemQuantity <= 0) {
-         alert('Quantity must be at least 1.');
-         return;
-     }
+    if (newItemQuantity <= 0) {
+      alert('Quantity must be at least 1.'); // Consider using state for messages
+      return;
+    }
 
     try {
       const newItem = {
@@ -56,8 +60,8 @@ function Home() {
 
       if (!response.ok) {
         console.error('API Error:', response.status, response.statusText);
-         const errorData = await response.json().catch(() => ({ message: 'Unknown error' }));
-         alert(`Failed to add item: ${errorData.message || response.statusText}`);
+        const errorData = await response.json().catch(() => ({ message: 'Unknown error' }));
+        alert(`Failed to add item: ${errorData.message || response.statusText}`); // Consider using state for messages
         return;
       }
 
@@ -68,7 +72,7 @@ function Home() {
 
     } catch (error) {
       console.error('Error adding item:', error);
-      alert('An error occurred while adding the item.');
+      alert('An error occurred while adding the item.'); // Consider using state for messages
     }
   };
 
@@ -80,8 +84,8 @@ function Home() {
 
       if (!response.ok) {
         console.error('API Error:', response.status, response.statusText);
-         const errorData = await response.json().catch(() => ({ message: 'Unknown error' }));
-         alert(`Failed to delete item: ${errorData.message || response.statusText}`);
+        const errorData = await response.json().catch(() => ({ message: 'Unknown error' }));
+        alert(`Failed to delete item: ${errorData.message || response.statusText}`); // Consider using state for messages
         return;
       }
 
@@ -89,7 +93,7 @@ function Home() {
 
     } catch (error) {
       console.error('Error deleting item:', error);
-      alert('An error occurred while deleting the item.');
+      alert('An error occurred while deleting the item.'); // Consider using state for messages
     }
   };
 
@@ -108,15 +112,15 @@ function Home() {
   const handleEditSubmit = async (event) => {
     event.preventDefault();
 
-     if (!editingItemName.trim()) {
-         alert('Item name cannot be empty.');
-         return;
-     }
+    if (!editingItemName.trim()) {
+      alert('Item name cannot be empty.'); // Consider using state for messages
+      return;
+    }
 
-     if (editingItemQuantity <= 0) {
-         alert('Quantity must be at least 1.');
-         return;
-     }
+    if (editingItemQuantity <= 0) {
+      alert('Quantity must be at least 1.'); // Consider using state for messages
+      return;
+    }
 
     try {
       const updatedItem = {
@@ -135,8 +139,8 @@ function Home() {
 
       if (!response.ok) {
         console.error('API Error:', response.status, response.statusText);
-         const errorData = await response.json().catch(() => ({ message: 'Unknown error' }));
-         alert(`Failed to update item: ${errorData.message || response.statusText}`);
+        const errorData = await response.json().catch(() => ({ message: 'Unknown error' }));
+        alert(`Failed to update item: ${errorData.message || response.statusText}`); // Consider using state for messages
         return;
       }
 
@@ -154,16 +158,18 @@ function Home() {
 
     } catch (error) {
       console.error('Error updating item:', error);
-      alert('An error occurred while updating the item.');
+      alert('An error occurred while updating the item.'); // Consider using state for messages
     }
   };
 
 
   return (
-    <div>
-      <h2>My Shopping List</h2>
+    <div className="home-container"> {/* Assuming you have a home-container class in Home.css */}
+      {/* Display username in the heading */}
+      <h2>{user && user.username ? `${user.username}'s Shopping List` : 'Shopping List'}</h2>
 
-      <form onSubmit={handleAddItem}>
+      {/* Add Item Form */}
+      <form onSubmit={handleAddItem} className="add-item-form"> {/* Assuming add-item-form class */}
         <input
           type="text"
           placeholder="Item Name"
@@ -179,15 +185,17 @@ function Home() {
           min="1"
           required
         />
-        <button type="submit">Add Item</button>
+        <button type="submit" className="add-button">Add Item</button> {/* Assuming add-button class */}
       </form>
 
+      {/* Shopping List Display */}
       {shoppingListItems.length > 0 ? (
-        <ul>
+        <ul className="shopping-list"> {/* Assuming shopping-list class */}
           {shoppingListItems.map(item => (
-            <li key={item.id}>
+            <li key={item.id} className="list-item"> {/* Assuming list-item class */}
               {editingItemId === item.id ? (
-                <form onSubmit={handleEditSubmit}>
+                // Edit Form
+                <form onSubmit={handleEditSubmit} className="edit-item-form"> {/* Assuming edit-item-form class */}
                    <input
                     type="text"
                     value={editingItemName}
@@ -201,25 +209,31 @@ function Home() {
                     min="1"
                     required
                   />
-                  <button type="submit">Save</button>
-                  <button type="button" onClick={handleCancelClick}>Cancel</button>
+                  <button type="submit" className="save-button">Save</button> {/* Assuming save-button class */}
+                  <button type="button" onClick={handleCancelClick} className="cancel-button">Cancel</button> {/* Assuming cancel-button class */}
                 </form>
               ) : (
+                // Item Details and Buttons
                 <>
-                  <h3>{item.name}</h3>
-                  <p>Quantity: {item.quantity}</p>
-                  <button onClick={() => handleEditClick(item)}>Edit</button>
-                  <button onClick={() => handleDeleteItem(item.id)}>Delete</button>
+                  <div className="item-details"> {/* Assuming item-details class */}
+                    <h3>{item.name}</h3>
+                    <p>Quantity: {item.quantity}</p>
+                  </div>
+                  <div className="item-actions"> {/* Assuming item-actions class */}
+                    <button onClick={() => handleEditClick(item)} className="edit-button">Edit</button> {/* Assuming edit-button class */}
+                    <button onClick={() => handleDeleteItem(item.id)} className="delete-button">Delete</button> {/* Assuming delete-button class */}
+                  </div>
                 </>
               )}
             </li>
           ))}
         </ul>
       ) : (
+        // Message when list is empty
         <p>Your shopping list is empty or could not be loaded..</p>
       )}
     </div>
-  );
+  )
 }
 
 export default Home;

@@ -5,8 +5,8 @@ body {
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #97B6CE; /* Changed background color to pink */
-    padding-top: 70px; /* Adjust this value based on your Navbar's height */
+    background-color: #97B6CE;
+    padding-top: 80px;
   }
   
   code {
