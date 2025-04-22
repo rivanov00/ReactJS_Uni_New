@@ -16,7 +16,7 @@ function Navbar() {
     <nav className="navbar">
       <ul>
         <li>
-          <NavLink to="/" activeClassName="active">Home</NavLink>
+          <NavLink to="/" className={({ isActive }) => isActive ? 'active' : ''}>Home</NavLink>
         </li>
         {isLoggedIn ? (
           <li>
@@ -27,15 +27,15 @@ function Navbar() {
         ) : (
           <>
             <li>
-              <NavLink to="/login" activeClassName="active">Login</NavLink>
+              <NavLink to="/login" className={({ isActive }) => isActive ? 'active' : ''}>Login</NavLink>
             </li>
              <li>
-              <NavLink to="/register" activeClassName="active">Register</NavLink>
+              <NavLink to="/register" className={({ isActive }) => isActive ? 'active' : ''}>Register</NavLink>
             </li>
           </>
         )}
       </ul>
-      <h1>RadostinIvanovFN320</h1>
+      <h1>Radostin Ivanov FN320's Groceries list</h1>
     </nav>
   );
 }

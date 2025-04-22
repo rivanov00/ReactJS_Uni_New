@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './Home.css';
 
 function Home() {
   const [shoppingListItems, setShoppingListItems] = useState([]);
@@ -215,7 +216,7 @@ function Home() {
           ))}
         </ul>
       ) : (
-        <p>Your shopping list is empty or could not be loaded.</p>
+        <p>Your shopping list is empty or could not be loaded..</p>
       )}
     </div>
   );
