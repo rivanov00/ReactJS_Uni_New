@@ -23,9 +23,10 @@
   ],
   "shoppinglist": [
     {
-      "id": "04c3",
-      "name": "mlqko",
-      "quantity": 1
+      "id": "df63",
+      "name": "milk",
+      "quantity": 1,
+      "userId": "4"
     }
   ]
 }
