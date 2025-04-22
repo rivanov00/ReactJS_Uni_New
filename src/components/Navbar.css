@@ -1,40 +1,113 @@
 /* src/components/Navbar.css */
+
+/* Styles for the main Navbar container */
 .navbar {
-    background-color: #f0f0f0; /* Light grey background */
-    padding: 10px 20px; /* Some padding */
-    display: flex; /* Use flexbox for layout */
-    justify-content: space-between; /* Space out title and links */
-    align-items: center; /* align items */
-  }
-  
-  .navbar h1 {
-    margin: 0; /* default margin */
-    font-size: 1.5em; /* font size */
-  }
-  
-  .navbar ul {
-    list-style: none; /* Remove bullet points */
-    margin: 0;
-    padding: 0;
-    display: flex; /* Arrange links in a row */
-  }
-  
-  .navbar li {
-    margin-left: 20px; /* Space between links */
-  }
-  
-  .navbar a {
-    text-decoration: none; /* Remove underline */
-    color: #333; /* Dark grey text color */
-    font-weight: bold; /* Bold text */
-  }
-  
-  .navbar a:hover {
-    color: #007bff; /* Change color on hover */
-  }
-  
-  /* Optional: Style for the active link using NavLink */
-  .navbar a.active {
-    color: #0056b3; /* Different color for the active link */
-    border-bottom: 2px solid #0056b3; /* Underline active link */
-  }
+  /* Position the navbar at the top of the viewport */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; /* Make it span the full width */
+  z-index: 1000; /* Ensure it stays on top of other content */
+
+  /* Basic appearance */
+  background-color: #333; /* Dark grey background */
+  color: white; /* Default text color */
+  /* Keep padding to give space from edges */
+  padding: 10px 20px; /* Add some padding inside the navbar */
+
+  /* Use flexbox to arrange children (h1 and ul) */
+  display: flex;
+  /* Align content to the start (left) */
+  justify-content: flex-start; /* Keep h1 on the left */
+  align-items: center; /* Vertically center items */
+
+  /* --- Added: Gap between flex items (h1 and ul) --- */
+  /* This creates space between the site name and the links */
+  gap: 20px; /* Adjust this value as needed for spacing */
+
+  /* Allow items to wrap to the next line if needed */
+  flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+
+  /* Optional: Smooth transition for background */
+  transition: background-color 0.3s ease;
+}
+
+/* Basic hover effect for the Navbar */
+.navbar:hover {
+  background-color: #444; /* Slightly lighter dark grey on hover */
+}
+
+/* Styles for the site title (h1) */
+.navbar h1 {
+  margin: 0; /* Remove default margin */
+  font-size: 1.5em; /* Adjust font size as needed */
+  color: white; /* Title color (can be changed) */
+  /* Basic flex for potential logo */
+  display: flex;
+  align-items: center; /* Vertically center items within h1 if logo is added */
+  gap: 10px; /* Space between name and logo */
+  /* Added properties to help with potential overflow */
+  flex-shrink: 0; /* Prevent shrinking by default */
+  min-width: 0; /* Allow content to shrink below intrinsic size if necessary */
+  word-break: break-word; /* Break long words */
+}
+
+/* Styles for the unordered list containing navigation links */
+.navbar ul {
+  list-style: none; /* Remove default bullet points */
+  /* --- Removed: margin-left: auto; --- */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  display: flex; /* Use flexbox to arrange list items (links) */
+  gap: 20px; /* Add space between list items */
+
+  /* Allow the ul to shrink if necessary */
+  flex-shrink: 1;
+  /* Allow content to shrink below intrinsic size if necessary */
+  min-width: 0;
+}
+
+/* Styles for individual list items (li) within the ul */
+.navbar li {
+  /* No specific styles needed here currently, gap on ul handles spacing */
+}
+
+/* Styles for the navigation links (a) */
+.navbar a {
+  text-decoration: none; /* Remove underline from links */
+  color: white; /* Link color (can be changed) */
+  font-weight: bold; /* Make link text bold */
+  font-size: 1.1em; /* Adjust link font size as needed */
+  /* Add a transition for smooth hover effects */
+  transition: color 0.3s ease;
+}
+
+/* Styles for links on hover */
+.navbar a:hover {
+  color: #ddd; /* Lighter color on hover */
+}
+
+/* Styles for the active link (applied by NavLink's className prop) */
+.navbar a.active {
+  color: yellow; /* Highlight color for the active link */
+  border-bottom: 2px solid yellow; /* Add an underline to the active link */
+}
+
+/* Styles for the logout button (when logged in) */
+.nav-logout-button {
+  padding: 5px 10px;
+  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+  color: white;
+  border: 1px solid white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+/* Styles for the logout button on hover */
+.nav-logout-button:hover {
+  background-color: white;
+  color: #333; /* Dark text on white hover */
+}
