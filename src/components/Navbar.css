@@ -11,7 +11,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 1450px;
+  gap: 100px;
   flex-wrap: wrap;
   transition: background-color 0.3s ease;
 }
@@ -26,7 +26,7 @@
   color: #679436;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
   flex-shrink: 0;
   min-width: 0;
   word-break: break-word;
@@ -34,7 +34,7 @@
 
 .navbar h1 img.site-logo {
     height: 50px;
-    width: 180px;
+    width: 150px;
     vertical-align: middle;
 }
 
@@ -50,7 +50,7 @@
 
 .navbar a {
   text-decoration: none;
-  color: white;
+  color: #ff002c;
   font-weight: bold;
   font-size: 1.1em;
   transition: color 0.3s ease;

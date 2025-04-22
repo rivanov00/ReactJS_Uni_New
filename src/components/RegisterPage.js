@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import './RegisterPage.css';
 
 function RegisterPage() {
   const [username, setUsername] = useState('');
@@ -16,7 +17,6 @@ function RegisterPage() {
 
     if (password !== confirmPassword) {
       errors.push("Passwords do not match!");
-      console.error("Password and Confirm Password do not match.");
     }
 
     const minLength = 8;
@@ -25,17 +25,14 @@ function RegisterPage() {
 
     if (password.length < minLength) {
       errors.push(`Password must be at least ${minLength} characters long.`);
-      console.error(`Password is less than ${minLength} characters.`);
     }
 
     if (!hasUppercase) {
       errors.push("Password must contain at least one uppercase letter.");
-      console.error("Password is missing uppercase letter.");
     }
 
     if (!hasSpecialChar) {
-      errors.push("Password must contain at least one special character (!@#$%^&*(),.?\":{}|<>).");
-      console.error("Password is missing special character.");
+      errors.push("Password must contain at least one special character.");
     }
 
     if (errors.length > 0) {
@@ -44,8 +41,6 @@ function RegisterPage() {
       setConfirmPassword('');
       return;
     }
-
-    console.log('Attempting registration...');
 
     try {
       const newUser = { username, email, password };
@@ -59,7 +54,6 @@ function RegisterPage() {
       });
 
       if (!response.ok) {
-        console.error('API Error:', response.status, response.statusText);
         const errorData = await response.json().catch(() => ({ message: 'Unknown error' }));
         alert(`Registration failed: ${errorData.message || response.statusText}`);
         return;
@@ -67,12 +61,10 @@ function RegisterPage() {
 
       const registeredUser = await response.json();
 
-      console.log('Registration successful:', registeredUser);
       alert('Registration successful! Please log in.');
       navigate('/login');
 
     } catch (error) {
-      console.error('Registration attempt failed:', error);
       alert('An error occurred during registration.');
     }
 
@@ -83,12 +75,13 @@ function RegisterPage() {
   };
 
   return (
-    <div>
-      <h2>Register Page</h2>
-      <form onSubmit={handleSubmit}>
+    <div className="register-container">
+      <h1 className="register-title">Register</h1>
+      <form className="register-form" onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="reg-username">Username:</label>
+          <label className="register-label" htmlFor="reg-username">Username:</label>
           <input
+            className="register-input"
             type="text"
             id="reg-username"
             value={username}
@@ -96,9 +89,10 @@ function RegisterPage() {
             required
           />
         </div>
-         <div>
-          <label htmlFor="reg-email">Email:</label>
+        <div>
+          <label className="register-label" htmlFor="reg-email">Email:</label>
           <input
+            className="register-input"
             type="email"
             id="reg-email"
             value={email}
@@ -107,8 +101,9 @@ function RegisterPage() {
           />
         </div>
         <div>
-          <label htmlFor="reg-password">Password:</label>
+          <label className="register-label" htmlFor="reg-password">Password:</label>
           <input
+            className="register-input"
             type="password"
             id="reg-password"
             value={password}
@@ -116,9 +111,10 @@ function RegisterPage() {
             required
           />
         </div>
-         <div>
-          <label htmlFor="confirm-password">Confirm Password:</label>
+        <div>
+          <label className="register-label" htmlFor="confirm-password">Confirm Password:</label>
           <input
+            className="register-input"
             type="password"
             id="confirm-password"
             value={confirmPassword}
@@ -126,9 +122,11 @@ function RegisterPage() {
             required
           />
         </div>
-        <button type="submit">Register</button>
+        <button className="register-button" type="submit">Register</button>
       </form>
-      <p>Already have an account? <Link to="/login">Login here</Link></p>
+      <div className="login-link">
+        Already have an account? <Link to="/login">Login here</Link>
+      </div>
     </div>
   );
 }
