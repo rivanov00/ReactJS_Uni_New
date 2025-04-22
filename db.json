@@ -19,6 +19,12 @@
       "id": "4",
       "username": "test",
       "password": "test123"
+    },
+    {
+      "id": "994f",
+      "username": "gabi",
+      "email": "gabi@abv.bg",
+      "password": "Gabi1234!"
     }
   ],
   "shoppinglist": [
@@ -39,6 +45,18 @@
       "name": "milk",
       "quantity": 1,
       "userId": "3"
+    },
+    {
+      "id": "6a89",
+      "name": "Banan",
+      "quantity": 1,
+      "userId": "994f"
+    },
+    {
+      "id": "f654",
+      "name": "Krastavica",
+      "quantity": 1,
+      "userId": "994f"
     }
   ]
 }
