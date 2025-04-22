@@ -5,6 +5,10 @@ function Home() {
   const [newItemName, setNewItemName] = useState('');
   const [newItemQuantity, setNewItemQuantity] = useState(1);
 
+  const [editingItemId, setEditingItemId] = useState(null);
+  const [editingItemName, setEditingItemName] = useState('');
+  const [editingItemQuantity, setEditingItemQuantity] = useState(1);
+
   useEffect(() => {
     const fetchShoppingList = async () => {
       try {
@@ -35,9 +39,6 @@ function Home() {
          return;
      }
 
-
-    console.log('Attempting to add item:', { name: newItemName, quantity: newItemQuantity });
-
     try {
       const newItem = {
         name: newItemName.trim(),
@@ -60,9 +61,7 @@ function Home() {
       }
 
       const addedItem = await response.json();
-
       setShoppingListItems([...shoppingListItems, addedItem]);
-
       setNewItemName('');
       setNewItemQuantity(1);
 
@@ -72,13 +71,8 @@ function Home() {
     }
   };
 
-  // Function to handle deleting an item
   const handleDeleteItem = async (itemId) => {
-    console.log('Attempting to delete item with ID:', itemId);
-
     try {
-      // Make a DELETE request to the specific item's endpoint
-      // JSON Server handles deleting the item by its ID
       const response = await fetch(`http://localhost:5000/shoppinglist/${itemId}`, {
         method: 'DELETE',
       });
@@ -90,15 +84,76 @@ function Home() {
         return;
       }
 
-      // If the DELETE request is successful, update the state
-      // Remove the deleted item from the shoppingListItems array
       setShoppingListItems(shoppingListItems.filter(item => item.id !== itemId));
-
-      console.log('Item deleted successfully:', itemId);
 
     } catch (error) {
       console.error('Error deleting item:', error);
       alert('An error occurred while deleting the item.');
+    }
+  };
+
+  const handleEditClick = (item) => {
+    setEditingItemId(item.id);
+    setEditingItemName(item.name);
+    setEditingItemQuantity(item.quantity);
+  };
+
+  const handleCancelClick = () => {
+    setEditingItemId(null);
+    setEditingItemName('');
+    setEditingItemQuantity(1);
+  };
+
+  const handleEditSubmit = async (event) => {
+    event.preventDefault();
+
+     if (!editingItemName.trim()) {
+         alert('Item name cannot be empty.');
+         return;
+     }
+
+     if (editingItemQuantity <= 0) {
+         alert('Quantity must be at least 1.');
+         return;
+     }
+
+    try {
+      const updatedItem = {
+        id: editingItemId,
+        name: editingItemName.trim(),
+        quantity: parseInt(editingItemQuantity, 10),
+      };
+
+      const response = await fetch(`http://localhost:5000/shoppinglist/${editingItemId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updatedItem),
+      });
+
+      if (!response.ok) {
+        console.error('API Error:', response.status, response.statusText);
+         const errorData = await response.json().catch(() => ({ message: 'Unknown error' }));
+         alert(`Failed to update item: ${errorData.message || response.statusText}`);
+        return;
+      }
+
+      const returnedItem = await response.json();
+
+      setShoppingListItems(
+        shoppingListItems.map(item =>
+          item.id === editingItemId ? returnedItem : item
+        )
+      );
+
+      setEditingItemId(null);
+      setEditingItemName('');
+      setEditingItemQuantity(1);
+
+    } catch (error) {
+      console.error('Error updating item:', error);
+      alert('An error occurred while updating the item.');
     }
   };
 
@@ -130,10 +185,32 @@ function Home() {
         <ul>
           {shoppingListItems.map(item => (
             <li key={item.id}>
-              <h3>{item.name}</h3>
-              <p>Quantity: {item.quantity}</p>
-              {/* Add the Delete button */}
-              <button onClick={() => handleDeleteItem(item.id)}>Delete</button>
+              {editingItemId === item.id ? (
+                <form onSubmit={handleEditSubmit}>
+                   <input
+                    type="text"
+                    value={editingItemName}
+                    onChange={(e) => setEditingItemName(e.target.value)}
+                    required
+                  />
+                   <input
+                    type="number"
+                    value={editingItemQuantity}
+                    onChange={(e) => setEditingItemQuantity(e.target.value)}
+                    min="1"
+                    required
+                  />
+                  <button type="submit">Save</button>
+                  <button type="button" onClick={handleCancelClick}>Cancel</button>
+                </form>
+              ) : (
+                <>
+                  <h3>{item.name}</h3>
+                  <p>Quantity: {item.quantity}</p>
+                  <button onClick={() => handleEditClick(item)}>Edit</button>
+                  <button onClick={() => handleDeleteItem(item.id)}>Delete</button>
+                </>
+              )}
             </li>
           ))}
         </ul>

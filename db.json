@@ -16,23 +16,16 @@
       "password": "teacher123"
     },
     {
-      "id": "6023",
-      "username": "kvostava",
-      "email": "kvostava@abv.bg",
-      "password": "12345678"
-    },
-    {
-      "id": "d381",
-      "username": "kvostava",
-      "email": "kvostava@abv.bg",
-      "password": "1"
-    },
-    {
-      "id": "367d",
+      "id": "3",
       "username": "test",
-      "email": "test@abv.bg",
-      "password": "test1234"
+      "password": "test123"
     }
   ],
-  "shoppinglist": []
+  "shoppinglist": [
+    {
+      "id": "42c6",
+      "name": "terst 123",
+      "quantity": 1
+    }
+  ]
 }
