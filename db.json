@@ -16,26 +16,16 @@
       "password": "teacher123"
     },
     {
-      "id": "3",
+      "id": "4",
       "username": "test",
       "password": "test123"
     }
   ],
   "shoppinglist": [
     {
-      "id": "116c",
-      "name": "Мляко",
-      "quantity": 3
-    },
-    {
-      "id": "2a24",
-      "name": "тест",
+      "id": "04c3",
+      "name": "mlqko",
       "quantity": 1
-    },
-    {
-      "id": "f5f6",
-      "name": "Пени",
-      "quantity": 4
     }
   ]
 }
