@@ -72,6 +72,36 @@ function Home() {
     }
   };
 
+  // Function to handle deleting an item
+  const handleDeleteItem = async (itemId) => {
+    console.log('Attempting to delete item with ID:', itemId);
+
+    try {
+      // Make a DELETE request to the specific item's endpoint
+      // JSON Server handles deleting the item by its ID
+      const response = await fetch(`http://localhost:5000/shoppinglist/${itemId}`, {
+        method: 'DELETE',
+      });
+
+      if (!response.ok) {
+        console.error('API Error:', response.status, response.statusText);
+         const errorData = await response.json().catch(() => ({ message: 'Unknown error' }));
+         alert(`Failed to delete item: ${errorData.message || response.statusText}`);
+        return;
+      }
+
+      // If the DELETE request is successful, update the state
+      // Remove the deleted item from the shoppingListItems array
+      setShoppingListItems(shoppingListItems.filter(item => item.id !== itemId));
+
+      console.log('Item deleted successfully:', itemId);
+
+    } catch (error) {
+      console.error('Error deleting item:', error);
+      alert('An error occurred while deleting the item.');
+    }
+  };
+
 
   return (
     <div>
@@ -102,6 +132,8 @@ function Home() {
             <li key={item.id}>
               <h3>{item.name}</h3>
               <p>Quantity: {item.quantity}</p>
+              {/* Add the Delete button */}
+              <button onClick={() => handleDeleteItem(item.id)}>Delete</button>
             </li>
           ))}
         </ul>
