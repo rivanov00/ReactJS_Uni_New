@@ -26,6 +26,12 @@
       "username": "kvostava",
       "email": "kvostava@abv.bg",
       "password": "1"
+    },
+    {
+      "id": "367d",
+      "username": "test",
+      "email": "test@abv.bg",
+      "password": "test1234"
     }
   ],
   "dataItems": [

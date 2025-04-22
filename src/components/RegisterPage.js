@@ -12,9 +12,36 @@ function RegisterPage() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    const errors = [];
+
     if (password !== confirmPassword) {
-      alert("Passwords do not match!");
+      errors.push("Passwords do not match!");
       console.error("Password and Confirm Password do not match.");
+    }
+
+    const minLength = 8;
+    const hasUppercase = /[A-Z]/.test(password);
+    const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+
+    if (password.length < minLength) {
+      errors.push(`Password must be at least ${minLength} characters long.`);
+      console.error(`Password is less than ${minLength} characters.`);
+    }
+
+    if (!hasUppercase) {
+      errors.push("Password must contain at least one uppercase letter.");
+      console.error("Password is missing uppercase letter.");
+    }
+
+    if (!hasSpecialChar) {
+      errors.push("Password must contain at least one special character (!@#$%^&*(),.?\":{}|<>).");
+      console.error("Password is missing special character.");
+    }
+
+    if (errors.length > 0) {
+      alert("Password requirements not met:\n\n" + errors.join('\n'));
+      setPassword('');
+      setConfirmPassword('');
       return;
     }
 
