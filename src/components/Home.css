@@ -1,168 +1,145 @@
-/* src/components/Home.css */
-
-/* Style the main container of the Home component */
 .home-container {
-    padding: 20px;
-    max-width: 600px; /* Limit the width of the content */
-    margin: 20px auto; /* Center the container */
-    border: 1px solid #ddd; /* Add a light border */
-    border-radius: 8px; /* Rounded corners */
-    background-color: #f9f9f9; /* Light grey background */
-  }
-  
-  /* Style the main heading */
-  .home-container h2 {
-    text-align: center; /* Center the text */
-    color: #333; /* Dark grey text */
-    margin-bottom: 20px; /* Space below the heading */
-  }
-  
-  
-  /* Style the form for adding new items */
-  .add-item-form {
-    display: flex; /* Arrange children (inputs, button) in a row */
-    gap: 10px; /* Space between the flex items */
-    margin-bottom: 20px; /* Space below the form */
-    padding: 15px;
-    border: 1px solid #eee; /* Light border */
-    border-radius: 5px;
-    background-color: #fff; /* White background for the form area */
-  }
-  
-  /* Style inputs within the add form */
-  .add-item-form input {
-    flex-grow: 1; /* Allow input fields to take up available space */
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  /* Style the button within the add form */
-  .add-button {
-    padding: 8px 15px;
-    background-color: #5cb85c; /* Green color */
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer; /* Indicate clickable */
-    transition: background-color 0.3s ease; /* Smooth hover effect */
-  }
-  
-  .add-button:hover {
-    background-color: #4cae4c; /* Darker green on hover */
-  }
-  
-  
-  /* Style the unordered list for shopping items */
-  .shopping-list {
-    list-style: none; /* Remove default bullet points */
-    padding: 0;
-    margin: 0;
-  }
-  
-  /* Style each list item */
-  .list-item {
-    display: flex; /* Arrange item details and buttons in a row */
-    justify-content: space-between; /* Push details to left, buttons to right */
-    align-items: center; /* Vertically center content */
-    padding: 10px 15px;
-    border-bottom: 1px solid #eee; /* Add a separator line */
-    background-color: #fff; /* White background for each item */
-  }
-  
-  /* Remove bottom border from the last item */
-  .list-item:last-child {
-    border-bottom: none;
-  }
-  
-  /* Style the container for item name and quantity */
-  .item-details {
-    flex-grow: 1; /* Allow details to take up space */
-    margin-right: 10px; /* Space between details and buttons */
-  }
-  
-  /* Style item name */
-  .item-details h3 {
-    margin: 0 0 5px 0; /* Adjust spacing */
-    color: #555;
-  }
-  
-  /* Style item quantity */
-  .item-details p {
-     margin: 0;
-     color: #777;
-     font-size: 0.9em;
-  }
-  
-  /* Style the container for edit and delete buttons */
-  .item-actions button {
-     margin-left: 5px; /* Space between buttons */
-     padding: 5px 10px;
-     border: none;
-     border-radius: 4px;
-     cursor: pointer;
-     transition: background-color 0.3s ease;
-     font-size: 0.9em;
-  }
-  
-  /* Style the Edit button */
-  .edit-button {
-      background-color: #f0ad4e; /* Orange color */
-      color: white;
-  }
-  
-  .edit-button:hover {
-      background-color: #ec971f; /* Darker orange on hover */
-  }
-  
-  /* Style the Delete button */
-  .delete-button {
-      background-color: #d9534f; /* Red color */
-      color: white;
-  }
-  
-  .delete-button:hover {
-      background-color: #c9302c; /* Darker red on hover */
-  }
-  
-  
-  /* Style the form that appears when editing an item */
-  .edit-item-form {
-    display: flex; /* Arrange inputs and buttons in a row */
-    gap: 10px; /* Space between elements */
-    align-items: center;
-    flex-grow: 1; /* Allow form to take up space within the list item */
-  }
-  
-   .edit-item-form input {
-      padding: 5px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      flex-grow: 1; /* Allow inputs to take up space */
-   }
-  
-  /* Style the Save button in the edit form */
-   .save-button {
-      background-color: #337ab7; /* Blue color */
-      color: white;
-   }
-  
-   .save-button:hover {
-       background-color: #286090; /* Darker blue on hover */
-   }
-  
-  /* Style the Cancel button in the edit form */
-   .cancel-button {
-       background-color: #ccc; /* Grey color */
-       color: #333; /* Dark text */
-   }
-  
-   .cancel-button:hover {
-       background-color: #bbb; /* Darker grey on hover */
-   }
-  
-  /* Style the message shown when the list is empty */
-  .home-container p {
-     text-align: center;
-     color: #555;
-  }
+  padding: 20px;
+  max-width: 600px;
+  margin: 20px auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.home-container h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.add-item-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.add-item-form input {
+  flex-grow: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.add-button {
+  padding: 8px 15px;
+  background-color: #5cb85c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #4cae4c;
+}
+
+.shopping-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  border-bottom: 1px solid #eee;
+  background-color: #fff;
+}
+
+.list-item:last-child {
+  border-bottom: none;
+}
+
+.item-details {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.item-details h3 {
+  margin: 0 0 5px 0;
+  color: #555;
+}
+
+.item-details p {
+  margin: 0;
+  color: #777;
+  font-size: 0.9em;
+}
+
+.item-actions button {
+  margin-left: 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.9em;
+}
+
+.edit-button {
+  background-color: #f0ad4e;
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: #ec971f;
+}
+
+.delete-button {
+  background-color: #d9534f;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #c9302c;
+}
+
+.edit-item-form {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.edit-item-form input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex-grow: 1;
+}
+
+.save-button {
+  background-color: #337ab7;
+  color: white;
+}
+
+.save-button:hover {
+  background-color: #286090;
+}
+
+.cancel-button {
+  background-color: #ccc;
+  color: #333;
+}
+
+.cancel-button:hover {
+  background-color: #bbb;
+}
+
+.home-container p {
+  text-align: center;
+  color: #555;
+}
