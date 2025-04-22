@@ -1,29 +1,53 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-function RegisterPage() 
-{
+function RegisterPage() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  const handleSubmit = (event) => 
-   {
+  const navigate = useNavigate();
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (password !== confirmPassword) 
-    {
+    if (password !== confirmPassword) {
       alert("Passwords do not match!");
+      console.error("Password and Confirm Password do not match.");
       return;
     }
 
-    console.log('Registration form submitted:', 
-    {
-      username,
-      email,
-      password,
-    });
+    console.log('Attempting registration...');
+
+    try {
+      const newUser = { username, email, password };
+
+      const response = await fetch('http://localhost:5000/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newUser),
+      });
+
+      if (!response.ok) {
+        console.error('API Error:', response.status, response.statusText);
+        const errorData = await response.json().catch(() => ({ message: 'Unknown error' }));
+        alert(`Registration failed: ${errorData.message || response.statusText}`);
+        return;
+      }
+
+      const registeredUser = await response.json();
+
+      console.log('Registration successful:', registeredUser);
+      alert('Registration successful! Please log in.');
+      navigate('/login');
+
+    } catch (error) {
+      console.error('Registration attempt failed:', error);
+      alert('An error occurred during registration.');
+    }
 
     setUsername('');
     setEmail('');

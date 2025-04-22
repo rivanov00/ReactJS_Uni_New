@@ -1,14 +1,48 @@
 {
-    "users": 
-    [
-      
-        { "id": 1, "username": "testuser", "password": "password123" },
-        { "id": 2, "username": "rado", "password": "rado123" },
-        { "id": 3, "username": "teacher", "password": "teacher123" }
-    ],
-    "dataItems": [
-      { "id": 1, "name": "uni1 item A", "description": "This is the first sample data item." },
-      { "id": 2, "name": "uni2 Item B", "description": "This is the second sample data item." },
-      { "id": 3, "name": "uni3 Item C", "description": "This is the third sample data item." }
-    ]
-  }
+  "users": [
+    {
+      "id": 1,
+      "username": "testuser",
+      "password": "password123"
+    },
+    {
+      "id": 2,
+      "username": "rado",
+      "password": "rado123"
+    },
+    {
+      "id": 3,
+      "username": "teacher",
+      "password": "teacher123"
+    },
+    {
+      "id": "6023",
+      "username": "kvostava",
+      "email": "kvostava@abv.bg",
+      "password": "12345678"
+    },
+    {
+      "id": "d381",
+      "username": "kvostava",
+      "email": "kvostava@abv.bg",
+      "password": "1"
+    }
+  ],
+  "dataItems": [
+    {
+      "id": 1,
+      "name": "uni1 item A",
+      "description": "This is the first sample data item."
+    },
+    {
+      "id": 2,
+      "name": "uni2 Item B",
+      "description": "This is the second sample data item."
+    },
+    {
+      "id": 3,
+      "name": "uni3 Item C",
+      "description": "This is the third sample data item."
+    }
+  ]
+}
