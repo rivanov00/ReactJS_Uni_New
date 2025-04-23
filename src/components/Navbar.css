@@ -1,46 +1,41 @@
 .navbar {
   position: fixed;
-  top: 10px;
-  left: 0px;
-  right: 15px;
+  top: 0px;
   width: 100%;
   z-index: 1000;
   background-color: #054D69;
-  color: 427AA1;
-  padding: 15px 15px;
+  color: #427AA1;
+  padding: 10px 0  px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 100px;
+  gap: 120px;
   flex-wrap: wrap;
   transition: background-color 0.3s ease;
 }
 
 .navbar:hover {
-  background-color: #A5BE00;
+  background-color: #0f6586;
 }
 
 .navbar h1 {
   margin: 0;
-  font-size: 1.5em;
+  font-size: 2.5em;
   color: #679436;
   display: flex;
   align-items: center;
-  gap: 20px;
-  flex-shrink: 0;
-  min-width: 0;
-  word-break: break-word;
 }
 
 .navbar h1 img.site-logo {
-    height: 90px;
-    width: 200px;
+    height: 80px;
+    width: 120px;
     vertical-align: middle;
 }
 
 .navbar ul {
   list-style: none;
   margin: 0;
+  margin-left: px;
   padding: 0;
   display: flex;
   gap: 20px;
@@ -50,9 +45,9 @@
 
 .navbar a {
   text-decoration: none;
-  color: #ff002c;
+  color: #18bed8;
   font-weight: bold;
-  font-size: 1.1em;
+  font-size: 1.2em;
   transition: color 0.3s ease;
 }
 
@@ -61,16 +56,17 @@
 }
 
 .navbar a.active {
-  color: #679436;
-  border-bottom: 2px solid yellow;
+  color: #14115e;
+  border-bottom: 2px solid hsla(267, 53%, 73%, 0.753);
 }
 
 .nav-logout-button {
-  padding: 5px 10px;
-  background-color: rgba(255, 255, 255, 0.2);
+  padding: 4px 10px;
+  background-color: rgba(54, 11, 82, 0.2);
+  position: right;
   color: white;
   border: 1px solid white;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
   font-size: 1em;
@@ -78,6 +74,6 @@
 }
 
 .nav-logout-button:hover {
-  background-color: #679436;
-  color: #333;
+  background-color: #0f6586;
+  color: white;
 }

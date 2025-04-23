@@ -25,6 +25,12 @@
       "username": "gabi",
       "email": "gabi@abv.bg",
       "password": "Gabi1234!"
+    },
+    {
+      "id": "a256",
+      "username": "sasho",
+      "email": "test1234@abv.bg",
+      "password": "Sasho142@"
     }
   ],
   "shoppinglist": [
@@ -57,6 +63,30 @@
       "name": "Krastavica",
       "quantity": 1,
       "userId": "994f"
+    },
+    {
+      "id": "926b",
+      "name": "test2",
+      "quantity": 1,
+      "userId": "3"
+    },
+    {
+      "id": "1cda",
+      "name": "test4",
+      "quantity": 1,
+      "userId": "3"
+    },
+    {
+      "id": "bbf4",
+      "name": "test",
+      "quantity": 1,
+      "userId": "a256"
+    },
+    {
+      "id": "ea37",
+      "name": "tev vnqe vnvqenv",
+      "quantity": 1,
+      "userId": "a256"
     }
   ]
 }
