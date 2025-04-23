@@ -129,12 +129,12 @@
 }
 
 .delete-button {
-  background-color: #d9534f;
-  color: rgb(14, 14, 14);
+  background-color: #dc1811;
+  color: rgb(255, 255, 255);
 }
 
 .delete-button:hover {
-  background-color: #c9302c;
+  background-color: #ff0800;
 }
 
 .edit-item-form {
