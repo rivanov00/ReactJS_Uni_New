@@ -52,12 +52,12 @@
 }
 
 .navbar a:hover {
-  color: #14115e;
+  color: #97f0fe;
 }
 
 .navbar a.active {
-  color: #14115e;
-  border-bottom: 2px solid hsla(267, 53%, 73%, 0.753);
+  color: #97f0fe;
+  border-bottom: 2px solid #97f0fe
 }
 
 .nav-logout-button {
