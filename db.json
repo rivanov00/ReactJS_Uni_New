@@ -35,12 +35,6 @@
   ],
   "shoppinglist": [
     {
-      "id": "df63",
-      "name": "milk",
-      "quantity": 1,
-      "userId": "4"
-    },
-    {
       "id": "30b4",
       "name": "test123",
       "quantity": 1,
@@ -87,6 +81,12 @@
       "name": "tev vnqe vnvqenv",
       "quantity": 1,
       "userId": "a256"
+    },
+    {
+      "id": "b989",
+      "name": "te",
+      "quantity": 3,
+      "userId": "4"
     }
   ]
 }

@@ -6,7 +6,7 @@
   align-items: center;
   font-family: 'Segoe UI', sans-serif;
   padding: 20px;
-  padding-top: 90px;
+  padding-top: 30px;
 }
 
 .home-title {
@@ -26,14 +26,14 @@
   flex-wrap: wrap;
   width: 100%;
   max-width: 500px;
-  gap: 15px;
-  margin-bottom: 30px;
+  gap: 12px;
+  margin-bottom: 20px;
   align-items: center;
 }
 
 .add-item-form input {
   flex-grow: 1;
-  padding: 10px 15px;
+  padding: 10px 4px;
   font-size: 1rem;
   border-radius: 8px;
   border: none;
@@ -130,7 +130,7 @@
 
 .delete-button {
   background-color: #d9534f;
-  color: white;
+  color: rgb(14, 14, 14);
 }
 
 .delete-button:hover {
@@ -152,37 +152,6 @@
   flex-grow: 1;
   font-size: 1em;
   box-sizing: border-box;
-}
-
-.save-button {
-  background-color: #337ab7;
-  color: white;
-  padding: 8px 15px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  font-weight: bold;
-}
-
-.save-button:hover {
-  background-color: #286090;
-}
-
-.cancel-button {
-  background-color: #ccc;
-  color: #333;
-  /* Corrected padding from 99 to 8px */
-  padding: 8px 15px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  font-weight: bold;
-}
-
-.cancel-button:hover {
-  background-color: #bbb;
 }
 
 .empty-list-message {
