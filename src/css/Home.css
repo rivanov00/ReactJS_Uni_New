@@ -1,5 +1,4 @@
-.home-container
-{
+.home-container {
   background-color: #97B6CE;
   min-height: 70vh;
   display: flex;
@@ -7,11 +6,10 @@
   align-items: center;
   font-family: 'Segoe UI', sans-serif;
   padding: 20px;
-  padding-top: 30px;
+  padding-top: 90px;
 }
 
-.home-title
-{
+.home-title {
   font-size: 2.5rem;
   color: #fff;
   margin-bottom: 20px;
@@ -19,8 +17,7 @@
   text-align: center;
 }
 
-.add-item-form
-{
+.add-item-form {
   background-color: #679436;
   padding: 20px 30px;
   border-radius: 12px;
@@ -29,15 +26,14 @@
   flex-wrap: wrap;
   width: 100%;
   max-width: 500px;
-  gap: 12px;
-  margin-bottom: 20px;
+  gap: 15px;
+  margin-bottom: 30px;
   align-items: center;
 }
 
-.add-item-form input
-{
+.add-item-form input {
   flex-grow: 1;
-  padding: 10px 4px;
+  padding: 10px 15px;
   font-size: 1rem;
   border-radius: 8px;
   border: none;
@@ -45,14 +41,12 @@
   box-sizing: border-box;
 }
 
-.add-item-form input[type="number"]
-{
+.add-item-form input[type="number"] {
  max-width: 80px;
  flex-grow: 0;
 }
 
-.add-button
-{
+.add-button {
   background-color: #054D69;
   color: #000;
   font-weight: bold;
@@ -63,13 +57,11 @@
   transition: background-color 0.2s ease;
 }
 
-.add-button:hover
-{
+.add-button:hover {
   background-color: #A5BE00;
 }
 
-.shopping-list
-{
+.shopping-list {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -81,8 +73,7 @@
   overflow: hidden;
 }
 
-.list-item
-{
+.list-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -91,40 +82,34 @@
   color: #fff;
 }
 
-.list-item:last-child
-{
+.list-item:last-child {
   border-bottom: none;
 }
 
-.item-details
-{
+.item-details {
   flex-grow: 1;
   margin-right: 15px;
 }
 
-.item-details h3
-{
+.item-details h3 {
   margin: 0 0 5px 0;
   color: #fff;
   font-size: 1.2em;
 }
 
-.item-details p
-{
+.item-details p {
   margin: 0;
   color: #e0e0e0;
   font-size: 0.9em;
 }
 
-.item-actions
-{
+.item-actions {
   display: flex;
   gap: 10px;
   flex-shrink: 0;
 }
 
-.item-actions button
-{
+.item-actions button {
   padding: 8px 15px;
   border: none;
   border-radius: 8px;
@@ -134,50 +119,25 @@
   font-weight: bold;
 }
 
-.edit-button
-{
+.edit-button {
   background-color: #f0ad4e;
   color: white;
 }
 
-.edit-button:hover
-{
+.edit-button:hover {
   background-color: #ec971f;
 }
 
-<<<<<<< HEAD:src/css/Home.css
-<<<<<<< HEAD:src/css/Home.css
-.delete-button
-{
+.delete-button {
   background-color: #d9534f;
   color: white;
 }
 
-.delete-button:hover
-{
+.delete-button:hover {
   background-color: #c9302c;
-=======
-.delete-button {
-  background-color: #dc1811;
-  color: rgb(255, 255, 255);
-=======
-.delete-button {
-  background-color: #dc1811;
-  color: rgb(255, 255, 255);
 }
 
-.delete-button:hover {
-  background-color: #ff0800;
->>>>>>> d34a40cdca0c9b4242f8e9b050e62341f45deb48:src/components/Home.css
-}
-
-.delete-button:hover {
-  background-color: #ff0800;
->>>>>>> d34a40cdca0c9b4242f8e9b050e62341f45deb48:src/components/Home.css
-}
-
-.edit-item-form
-{
+.edit-item-form {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -185,8 +145,7 @@
   flex-grow: 1;
 }
 
-.edit-item-form input
-{
+.edit-item-form input {
   padding: 8px 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -195,10 +154,7 @@
   box-sizing: border-box;
 }
 
-<<<<<<< HEAD:src/css/Home.css
-<<<<<<< HEAD:src/css/Home.css
-.save-button
-{
+.save-button {
   background-color: #337ab7;
   color: white;
   padding: 8px 15px;
@@ -209,13 +165,11 @@
   font-weight: bold;
 }
 
-.save-button:hover
-{
+.save-button:hover {
   background-color: #286090;
 }
 
-.cancel-button
-{
+.cancel-button {
   background-color: #ccc;
   color: #333;
   padding: 8px 15px;
@@ -226,18 +180,11 @@
   font-weight: bold;
 }
 
-.cancel-button:hover
-{
+.cancel-button:hover {
   background-color: #bbb;
 }
 
-.empty-list-message
-{
-=======
-=======
->>>>>>> d34a40cdca0c9b4242f8e9b050e62341f45deb48:src/components/Home.css
 .empty-list-message {
->>>>>>> d34a40cdca0c9b4242f8e9b050e62341f45deb48:src/components/Home.css
   text-align: center;
   color: #555;
   margin-top: 20px;

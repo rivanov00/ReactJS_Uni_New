@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import '../css/LoginPage.css'; // Corrected import path
+import '../css/LoginPage.css'; // Make sure this import path is correct
 
 function LoginPage() {
   const [usernameOrEmail, setUsernameOrEmail] = useState('');
@@ -18,13 +18,10 @@ function LoginPage() {
     setMessage('');
     setMessageType('');
 
-    console.log('Attempting login with:', { usernameOrEmail });
-
     try {
       const response = await fetch('http://localhost:5000/users');
 
       if (!response.ok) {
-        console.error('API Error:', response.status, response.statusText);
         setMessage('An error occurred while trying to log in. Please try again.');
         setMessageType('error');
         return;
@@ -38,19 +35,18 @@ function LoginPage() {
 
       if (foundUser) {
         login(foundUser);
-        setMessage('Login successful, you will be redirected to your shopping list');
+        setMessage('Login successful, you will be redirected to your shopping list.');
         setMessageType('success');
 
         setTimeout(() => {
           navigate('/');
-        }, 3000);
+        }, 2000); // Delay before redirecting
 
       } else {
         setMessage('Invalid username/email or password.');
         setMessageType('error');
       }
     } catch (error) {
-      console.error('Login attempt failed:', error);
       setMessage('An error occurred during login.');
       setMessageType('error');
     }
@@ -60,16 +56,21 @@ function LoginPage() {
     <div className="login-container">
       <h2 className="login-title">Login Page</h2>
 
-      {/* Moved the message element INSIDE the form */}
+      {/* The message element is placed inside the form */}
       <form onSubmit={handleSubmit} className="login-form">
-         {/* Area to display messages */}
+         {/* Area to display dynamic messages */}
         {message && (
           <p className={`login-message ${messageType}`}>
             {message}
           </p>
         )}
-        {/* End of message area */}
+        {/* End of dynamic message area */}
 
+        {/* Static info message inside the form */}
+        <p className="login-info-message">
+          Only for authorized users, please log-in
+        </p>
+        
         <div className="form-group">
           <label htmlFor="login-username-email" className="login-label">Username or Email:</label>
           <input
