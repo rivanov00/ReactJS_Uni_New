@@ -11,10 +11,16 @@ function Home() {
   const [editingItemName, setEditingItemName] = useState('');
   const [editingItemQuantity, setEditingItemQuantity] = useState(1);
 
+  const [message, setMessage] = useState('');
+  const [messageType, setMessageType] = useState('');
+
   const { user, isLoggedIn } = useAuth();
 
   useEffect(() => {
     const fetchShoppingList = async () => {
+      setMessage('');
+      setMessageType('');
+
       if (isLoggedIn && user && user.id) {
         const fetchUrl = `http://localhost:5000/shoppinglist?userId=${user.id}`;
         try {
@@ -25,6 +31,8 @@ function Home() {
           const data = await response.json();
           setShoppingListItems(data);
         } catch (error) {
+           setMessage('Error fetching shopping list.');
+           setMessageType('error');
         }
       } else {
         setShoppingListItems([]);
@@ -37,18 +45,24 @@ function Home() {
   const handleAddItem = async (event) => {
     event.preventDefault();
 
+    setMessage('');
+    setMessageType('');
+
     if (!isLoggedIn || !user || !user.id) {
-        alert('Please log in to add items.');
+        setMessage('Please log in to add items.');
+        setMessageType('error');
         return;
     }
 
     if (!newItemName.trim()) {
-      alert('Item name cannot be empty.');
+      setMessage('Item name cannot be empty.');
+      setMessageType('error');
       return;
     }
 
     if (newItemQuantity <= 0) {
-      alert('Quantity must be at least 1.');
+      setMessage('Quantity must be at least 1.');
+      setMessageType('error');
       return;
     }
 
@@ -64,14 +78,16 @@ function Home() {
       );
 
       if (itemExists) {
-        alert(`Item "${newItemName.trim()}" is already in your shopping list.`);
+        setMessage(`Item "${newItemName.trim()}" is already in your shopping list.`);
+        setMessageType('error');
         setNewItemName('');
         setNewItemQuantity(1);
         return;
       }
 
     } catch (error) {
-       alert('An error occurred while checking for existing items.');
+       setMessage('An error occurred while checking for existing items.');
+       setMessageType('error');
        return;
     }
 
@@ -93,7 +109,8 @@ function Home() {
 
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({ message: 'Unknown error' }));
-        alert(`Failed to add item: ${errorData.message || response.statusText}`);
+        setMessage(`Failed to add item: ${errorData.message || response.statusText}`);
+        setMessageType('error');
         return;
       }
 
@@ -101,15 +118,23 @@ function Home() {
       setShoppingListItems([...shoppingListItems, addedItem]);
       setNewItemName('');
       setNewItemQuantity(1);
+      setMessage('Item added successfully!');
+      setMessageType('success');
+
 
     } catch (error) {
-      alert('An error occurred while adding the item.');
+      setMessage('An error occurred while adding the item.');
+      setMessageType('error');
     }
   };
 
   const handleDeleteItem = async (itemId) => {
+      setMessage('');
+      setMessageType('');
+
       if (!isLoggedIn || !user || !user.id) {
-        alert('Please log in to delete items.');
+        setMessage('Please log in to delete items.');
+        setMessageType('error');
         return;
     }
     try {
@@ -119,20 +144,29 @@ function Home() {
 
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({ message: 'Unknown error' }));
-        alert(`Failed to delete item: ${errorData.message || response.statusText}`);
+        setMessage(`Failed to delete item: ${errorData.message || response.statusText}`);
+        setMessageType('error');
         return;
       }
 
       setShoppingListItems(shoppingListItems.filter(item => item.id !== itemId));
+      setMessage('Item deleted successfully.');
+      setMessageType('success');
+
 
     } catch (error) {
-      alert('An error occurred while deleting the item.');
+      setMessage('An error occurred while deleting the item.');
+      setMessageType('error');
     }
   };
 
   const handleEditClick = (item) => {
+      setMessage('');
+      setMessageType('');
+
       if (!isLoggedIn || !user || !user.id) {
-        alert('Please log in to edit items.');
+        setMessage('Please log in to edit items.');
+        setMessageType('error');
         return;
     }
     setEditingItemId(item.id);
@@ -141,6 +175,8 @@ function Home() {
   };
 
   const handleCancelClick = () => {
+    setMessage('');
+    setMessageType('');
     setEditingItemId(null);
     setEditingItemName('');
     setEditingItemQuantity(1);
@@ -149,18 +185,24 @@ function Home() {
   const handleEditSubmit = async (event) => {
     event.preventDefault();
 
+    setMessage('');
+    setMessageType('');
+
       if (!isLoggedIn || !user || !user.id) {
-        alert('Please log in to save edits.');
+        setMessage('Please log in to save edits.');
+        setMessageType('error');
         return;
     }
 
     if (!editingItemName.trim()) {
-      alert('Item name cannot be empty.');
+      setMessage('Item name cannot be empty.');
+      setMessageType('error');
       return;
     }
 
     if (editingItemQuantity <= 0) {
-      alert('Quantity must be at least 1.');
+      setMessage('Quantity must be at least 1.');
+      setMessageType('error');
       return;
     }
 
@@ -182,7 +224,8 @@ function Home() {
 
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({ message: 'Unknown error' }));
-        alert(`Failed to update item: ${errorData.message || response.statusText}`);
+        setMessage(`Failed to update item: ${errorData.message || response.statusText}`);
+        setMessageType('error');
         return;
       }
 
@@ -197,15 +240,24 @@ function Home() {
       setEditingItemId(null);
       setEditingItemName('');
       setEditingItemQuantity(1);
+      setMessage('Item updated successfully!');
+      setMessageType('success');
 
     } catch (error) {
-      alert('An error occurred while updating the item.');
+      setMessage('An error occurred while updating the item.');
+      setMessageType('error');
     }
   };
 
   return (
     <div className="home-container">
-      <h2 className="home-title">{isLoggedIn && user && user.username ? `${user.username}'s Shopping List` : 'Shopping List'}</h2>
+      <h2 className="home-title">{isLoggedIn && user && user.username ? `${user.username}'s shopping List` : 'shopping List'}</h2>
+
+       {message && (
+        <p className={`home-message ${messageType}`}>
+          {message}
+        </p>
+      )}
 
       {isLoggedIn ? (
         <form onSubmit={handleAddItem} className="add-item-form">
