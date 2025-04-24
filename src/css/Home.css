@@ -146,6 +146,7 @@
 }
 
 <<<<<<< HEAD:src/css/Home.css
+<<<<<<< HEAD:src/css/Home.css
 .delete-button
 {
   background-color: #d9534f;
@@ -159,6 +160,15 @@
 .delete-button {
   background-color: #dc1811;
   color: rgb(255, 255, 255);
+=======
+.delete-button {
+  background-color: #dc1811;
+  color: rgb(255, 255, 255);
+}
+
+.delete-button:hover {
+  background-color: #ff0800;
+>>>>>>> d34a40cdca0c9b4242f8e9b050e62341f45deb48:src/components/Home.css
 }
 
 .delete-button:hover {
@@ -185,6 +195,7 @@
   box-sizing: border-box;
 }
 
+<<<<<<< HEAD:src/css/Home.css
 <<<<<<< HEAD:src/css/Home.css
 .save-button
 {
@@ -223,6 +234,8 @@
 .empty-list-message
 {
 =======
+=======
+>>>>>>> d34a40cdca0c9b4242f8e9b050e62341f45deb48:src/components/Home.css
 .empty-list-message {
 >>>>>>> d34a40cdca0c9b4242f8e9b050e62341f45deb48:src/components/Home.css
   text-align: center;
