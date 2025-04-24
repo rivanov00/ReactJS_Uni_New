@@ -51,7 +51,6 @@ function RegisterPage() {
     try {
       const existingUsersResponse = await fetch('http://localhost:5000/users');
       if (!existingUsersResponse.ok) {
-        console.error('API Error fetching users:', existingUsersResponse.status, existingUsersResponse.statusText);
         setMessage('An error occurred while checking for existing users.');
         setMessageType('error');
         return;
@@ -103,7 +102,6 @@ function RegisterPage() {
       }, 2000);
 
     } catch (error) {
-      console.error('Registration attempt failed:', error);
       setMessage('An error occurred during registration.');
       setMessageType('error');
     }
@@ -124,11 +122,9 @@ function RegisterPage() {
       )}
 
       <form className="register-form" onSubmit={handleSubmit}>
-        {/* --- Moved: Static Password Requirements Message (now inside the form) --- */}
         <p className="password-requirements">
           Password must be at least 8 characters long, contain at least one uppercase letter, and one special character.
         </p>
-        {/* --- End of moved message --- */}
 
         <div className="form-group">
           <label className="register-label" htmlFor="reg-username">Username:</label>
