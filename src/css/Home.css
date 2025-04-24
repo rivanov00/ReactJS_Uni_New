@@ -1,4 +1,5 @@
-.home-container {
+.home-container
+{
   background-color: #97B6CE;
   min-height: 70vh;
   display: flex;
@@ -9,7 +10,8 @@
   padding-top: 90px;
 }
 
-.home-title {
+.home-title
+{
   font-size: 2.5rem;
   color: #fff;
   margin-bottom: 20px;
@@ -17,7 +19,8 @@
   text-align: center;
 }
 
-.add-item-form {
+.add-item-form
+{
   background-color: #679436;
   padding: 20px 30px;
   border-radius: 12px;
@@ -31,7 +34,8 @@
   align-items: center;
 }
 
-.add-item-form input {
+.add-item-form input
+{
   flex-grow: 1;
   padding: 10px 15px;
   font-size: 1rem;
@@ -41,12 +45,14 @@
   box-sizing: border-box;
 }
 
-.add-item-form input[type="number"] {
+.add-item-form input[type="number"]
+{
  max-width: 80px;
  flex-grow: 0;
 }
 
-.add-button {
+.add-button
+{
   background-color: #054D69;
   color: #000;
   font-weight: bold;
@@ -57,11 +63,13 @@
   transition: background-color 0.2s ease;
 }
 
-.add-button:hover {
+.add-button:hover
+{
   background-color: #A5BE00;
 }
 
-.shopping-list {
+.shopping-list
+{
   list-style: none;
   padding: 0;
   margin: 0;
@@ -73,7 +81,8 @@
   overflow: hidden;
 }
 
-.list-item {
+.list-item
+{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -82,34 +91,40 @@
   color: #fff;
 }
 
-.list-item:last-child {
+.list-item:last-child
+{
   border-bottom: none;
 }
 
-.item-details {
+.item-details
+{
   flex-grow: 1;
   margin-right: 15px;
 }
 
-.item-details h3 {
+.item-details h3
+{
   margin: 0 0 5px 0;
   color: #fff;
   font-size: 1.2em;
 }
 
-.item-details p {
+.item-details p
+{
   margin: 0;
   color: #e0e0e0;
   font-size: 0.9em;
 }
 
-.item-actions {
+.item-actions
+{
   display: flex;
   gap: 10px;
   flex-shrink: 0;
 }
 
-.item-actions button {
+.item-actions button
+{
   padding: 8px 15px;
   border: none;
   border-radius: 8px;
@@ -119,25 +134,30 @@
   font-weight: bold;
 }
 
-.edit-button {
+.edit-button
+{
   background-color: #f0ad4e;
   color: white;
 }
 
-.edit-button:hover {
+.edit-button:hover
+{
   background-color: #ec971f;
 }
 
-.delete-button {
+.delete-button
+{
   background-color: #d9534f;
   color: white;
 }
 
-.delete-button:hover {
+.delete-button:hover
+{
   background-color: #c9302c;
 }
 
-.edit-item-form {
+.edit-item-form
+{
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -145,7 +165,8 @@
   flex-grow: 1;
 }
 
-.edit-item-form input {
+.edit-item-form input
+{
   padding: 8px 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -154,7 +175,8 @@
   box-sizing: border-box;
 }
 
-.save-button {
+.save-button
+{
   background-color: #337ab7;
   color: white;
   padding: 8px 15px;
@@ -165,14 +187,15 @@
   font-weight: bold;
 }
 
-.save-button:hover {
+.save-button:hover
+{
   background-color: #286090;
 }
 
-.cancel-button {
+.cancel-button
+{
   background-color: #ccc;
   color: #333;
-  /* Corrected padding from 99 to 8px */
   padding: 8px 15px;
   border: none;
   border-radius: 8px;
@@ -181,11 +204,13 @@
   font-weight: bold;
 }
 
-.cancel-button:hover {
+.cancel-button:hover
+{
   background-color: #bbb;
 }
 
-.empty-list-message {
+.empty-list-message
+{
   text-align: center;
   color: #555;
   margin-top: 20px;

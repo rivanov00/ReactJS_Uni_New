@@ -18,13 +18,10 @@ function LoginPage() {
     setMessage('');
     setMessageType('');
 
-    console.log('Attempting login with:', { usernameOrEmail });
-
     try {
       const response = await fetch('http://localhost:5000/users');
 
       if (!response.ok) {
-        console.error('API Error:', response.status, response.statusText);
         setMessage('An error occurred while trying to log in. Please try again.');
         setMessageType('error');
         return;
@@ -50,7 +47,6 @@ function LoginPage() {
         setMessageType('error');
       }
     } catch (error) {
-      console.error('Login attempt failed:', error);
       setMessage('An error occurred during login.');
       setMessageType('error');
     }
