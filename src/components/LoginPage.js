@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import '../css/LoginPage.css'; // Make sure this import path is correct
+import '../css/LoginPage.css';
 
 function LoginPage() {
   const [usernameOrEmail, setUsernameOrEmail] = useState('');
@@ -40,7 +40,7 @@ function LoginPage() {
 
         setTimeout(() => {
           navigate('/');
-        }, 2000); // Delay before redirecting
+        }, 2000);
 
       } else {
         setMessage('Invalid username/email or password.');
@@ -56,21 +56,17 @@ function LoginPage() {
     <div className="login-container">
       <h2 className="login-title">Login Page</h2>
 
-      {/* The message element is placed inside the form */}
-      <form onSubmit={handleSubmit} className="login-form">
-         {/* Area to display dynamic messages */}
-        {message && (
-          <p className={`login-message ${messageType}`}>
-            {message}
-          </p>
-        )}
-        {/* End of dynamic message area */}
-
-        {/* Static info message inside the form */}
-        <p className="login-info-message">
-          Only for authorized users, please log-in
+      {message && (
+        <p className={`login-message ${messageType}`}>
+          {message}
         </p>
-        
+      )}
+
+      <form onSubmit={handleSubmit} className="login-form">
+        <p className="login-info-message">
+          The website is for authorized users only
+        </p>
+
         <div className="form-group">
           <label htmlFor="login-username-email" className="login-label">Username or Email:</label>
           <input
