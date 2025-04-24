@@ -1,27 +1,6 @@
-Steps needed :
-Course work and final exam criteria
-
-The following functionalities are to be used in the developing of the application:
-1.	Components
-2.	Routing
-3.	Forms
-4.	Hooks
-5.	REST API
-6.	GitHub
-
-The web application should contain:
-1.	Log-in and register form
-2.	Authentication
-3.	Navigation bar
-4.	The data should be managed via REST API requests (Json server can be used instead of back-end)
-5.	The website should represent a main page composed of a navigation bar; main body, which should contain dynamically rendered data from the database. 
-6.	The theme of the application and any other content and functionalities is up to the developer (you).
-7.	The exam consist of presenting the application (make a presentation), all its functionalities (the visual representation will affect the grading) and a record of all the GitHub commits (as evidence of authenticity of the application. Keep in mind that all different states should be in different commits).
-8.	The application should be added in the course (except node_modules) and a link to your GitHub project.
-
-
-How to install and run the project
-
-Apps required for the project to run
-npm install react-router-dom
-npm install json-server --save-dev
+React Shopping List ApplicationThis is a simple web application built with React to manage a personal shopping list. It includes user authentication features.What the Project HasThe application includes the following main parts:Login and Register Pages: Forms for users to sign up and log in.Authentication: Keeps track of whether a user is logged in and protects certain pages.Navigation Bar: A bar at the top to easily move between different parts of the site.Home Page: This is the main page where logged-in users can see and manage their shopping list.Shopping List: Data for the shopping list is loaded from a simple database and can be added, edited, or deleted.404 Page: Shows a "Page Not Found" message if you try to go to a page that doesn't exist.How the Project WorksThe application uses several key technologies:React Components: The website is built using reusable blocks of code called components.Routing: react-router-dom is used to handle navigation between different pages without refreshing the whole page.Forms: Standard HTML forms are used for user input on the login and register pages.Hooks: React Hooks like useState and useEffect help manage data and side effects in the components. useContext is used for authentication, and useNavigate for redirecting users after actions like login.REST API: The application talks to a simple API (simulated by JSON Server) to get and save user and shopping list data.Authentication Context: A central place (AuthContext) keeps track of the logged-in user's state.When you log in, the app checks your details with the data from the API. If successful, it remembers you're logged in and lets you see the Home page and manage your list.How to Run the ProjectTo get the project running on your computer:Get the code: Download or clone the project files from GitHub.git clone <Your GitHub Repository URL>
+cd YourProjectFolderName
+(Replace YourProjectFolderName and <Your GitHub Repository URL>)Install necessary tools: Open your terminal in the project folder and install the required packages.npm install
+Start the database server: Open a second terminal window in the project folder and start the JSON Server to provide the API data.npm run server
+(This command assumes you have a script named server in your package.json file that runs json-server --watch db.json --port 5000)Start the web application: Go back to your first terminal window and start the React application.npm start
+The application should open in your web browser, usually at http://localhost:3000. Make sure both the JSON Server and the React app are running at the same time.
