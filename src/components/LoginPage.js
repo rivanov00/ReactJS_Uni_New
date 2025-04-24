@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import '../css/LoginPage.css';
+import '../css/LoginPage.css'; // Corrected import path
 
 function LoginPage() {
   const [usernameOrEmail, setUsernameOrEmail] = useState('');
@@ -18,10 +18,13 @@ function LoginPage() {
     setMessage('');
     setMessageType('');
 
+    console.log('Attempting login with:', { usernameOrEmail });
+
     try {
       const response = await fetch('http://localhost:5000/users');
 
       if (!response.ok) {
+        console.error('API Error:', response.status, response.statusText);
         setMessage('An error occurred while trying to log in. Please try again.');
         setMessageType('error');
         return;
@@ -40,13 +43,14 @@ function LoginPage() {
 
         setTimeout(() => {
           navigate('/');
-        }, 2000);
+        }, 3000);
 
       } else {
         setMessage('Invalid username/email or password.');
         setMessageType('error');
       }
     } catch (error) {
+      console.error('Login attempt failed:', error);
       setMessage('An error occurred during login.');
       setMessageType('error');
     }
@@ -56,16 +60,15 @@ function LoginPage() {
     <div className="login-container">
       <h2 className="login-title">Login Page</h2>
 
-      {message && (
-        <p className={`login-message ${messageType}`}>
-          {message}
-        </p>
-      )}
-
+      {/* Moved the message element INSIDE the form */}
       <form onSubmit={handleSubmit} className="login-form">
-        <p className="login-info-message">
-          The grocery list is only for authorized users, please log-in to use.
-        </p>
+         {/* Area to display messages */}
+        {message && (
+          <p className={`login-message ${messageType}`}>
+            {message}
+          </p>
+        )}
+        {/* End of message area */}
 
         <div className="form-group">
           <label htmlFor="login-username-email" className="login-label">Username or Email:</label>

@@ -1,13 +1,13 @@
 .login-container {
     background-color: #97B6CE;
-    min-height: 0vh;
+    min-height: 70vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-family: 'Segoe UI', sans-serif;
-    padding: 0px;
-    padding-top: 70px;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .login-title {
@@ -15,11 +15,12 @@
     color: #fff;
     margin-bottom: 20px;
     font-weight: bold;
+    text-align: center;
 }
 
 .login-form {
     background-color: #054D69;
-    padding: 20px 20px;
+    padding: 20px 25px;
     border-radius: 12px;
     box-shadow: 0 0 50px rgba(0,0,0,0.25);
     display: flex;
@@ -27,13 +28,19 @@
     width: 100%;
     max-width: 400px;
     gap: 15px;
+    box-sizing: border-box;
+}
+
+.form-group {
+    width: 100%;
 }
 
 .login-label {
     font-size: 1.1rem;
     color: #fff;
-    margin-bottom: 0px;
+    margin-bottom: 5px;
     display: block;
+    font-weight: bold;
 }
 
 .login-input {
@@ -47,14 +54,19 @@
 }
 
 .login-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
     background-color: #679436;
     color: #000;
     font-weight: bold;
-    padding: 12px;
+    font-size: 23px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.2s ease;
+    box-sizing: border-box;
 }
 
 .login-button:hover {
@@ -66,6 +78,7 @@
     font-size: 1rem;
     color: #fff;
     text-align: center;
+    width: 100%;
 }
 
 .register-link a {
@@ -77,35 +90,28 @@
 .register-link a:hover {
     text-decoration: underline;
 }
+
 .login-message {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 9px;
-    border-radius: 10px;
-    text-align: center;
-    font-weight: bold;
-    width: 47%;
-    box-sizing: border-box;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 9px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  width: 100%;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .login-message.success {
-    background-color: #2aec57;
-    color: #155724;
-    border: 2px solid #c3e6cb;
+  background-color: #2aec57;
+  color: #155724;
+  border: 2px solid #c3e6cb;
 }
 
 .login-message.error {
-    background-color: #de3b49;
-    color: #721c24;
-    border: 2px solid #f5c6cb;
+  background-color: #de3b49;
+  color: #721c24;
+  border: 2px solid #f5c6cb;
 }
-.login-info-message {
-    margin-top: auto; /* Matched password-requirements */
-    margin-bottom: 0px; /* Matched password-requirements */
-    font-size: 1em; /* Matched password-requirements */
-    color: #ffffff; /* Matched password-requirements */
-    text-align: center; /* Keep center */
-    width: 100%; /* Keep 100% */
-    box-sizing: border-box; /* Keep border-box */
-    font-weight: bold; /* Matched password-requirements */
-  }

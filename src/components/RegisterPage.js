@@ -118,17 +118,16 @@ function RegisterPage() {
     <div className="register-container">
       <h1 className="register-title">Register</h1>
 
-      {message && (
-        <p className={`login-message ${messageType}`} dangerouslySetInnerHTML={{ __html: message }}>
-        </p>
-      )}
-
+      {/* Moved the message element INSIDE the form */}
       <form className="register-form" onSubmit={handleSubmit}>
-        {/* --- Moved: Static Password Requirements Message (now inside the form) --- */}
+        {message && (
+          <p className={`login-message ${messageType}`} dangerouslySetInnerHTML={{ __html: message }}>
+          </p>
+        )}
+
         <p className="password-requirements">
           Password must be at least 8 characters long, contain at least one uppercase letter, and one special character.
         </p>
-        {/* --- End of moved message --- */}
 
         <div className="form-group">
           <label className="register-label" htmlFor="reg-username">Username:</label>

@@ -1,0 +1,158 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "testuser",
+      "password": "password123"
+    },
+    {
+      "id": "2",
+      "username": "rado",
+      "password": "rado123"
+    },
+    {
+      "id": "3",
+      "username": "teacher",
+      "password": "teacher123"
+    },
+    {
+      "id": "4",
+      "username": "test",
+      "password": "test123"
+    },
+    {
+      "id": "994f",
+      "username": "gabi",
+      "email": "gabi@abv.bg",
+      "password": "Gabi1234!"
+    },
+    {
+      "id": "9ac3",
+      "username": "niki",
+      "email": "nikikurvv@abv.bg",
+      "password": "Kur12345!"
+    },
+    {
+      "id": "6381",
+      "username": "test",
+      "email": "test@abv.bg",
+      "password": "TEST%#15813"
+    },
+    {
+      "id": "ef48",
+      "username": "TEST%#15813",
+      "email": "TEST%#15813@ABV.BG",
+      "password": "TEST%#15813"
+    },
+    {
+      "id": "1c7b",
+      "username": "veqveq",
+      "email": "veq@abv.bg",
+      "password": "TEST%#15813"
+    },
+    {
+      "id": "dabc",
+      "username": "teqteqt",
+      "email": "teqteq@abv.bg",
+      "password": "531F134!"
+    },
+    {
+      "id": "f61f",
+      "username": "teqveq",
+      "email": "vjeqiv@abv.bg",
+      "password": "531F134!"
+    },
+    {
+      "id": "af18",
+      "username": "teqteqt@abv.bg",
+      "email": "teqteqt@abv.bg",
+      "password": "teqteqt@abv.bgW"
+    },
+    {
+      "id": "7fef",
+      "username": "teqtveq@abv.bg!2@",
+      "email": "teqtveq@abv.bg",
+      "password": "teqtveq@abv.bg!2@W"
+    },
+    {
+      "id": "1c10",
+      "username": "ijvaevj@abv.bg",
+      "email": "ijvaevj@abv.bg",
+      "password": "ijvaevj@abv.bgW"
+    },
+    {
+      "id": "e295",
+      "username": "testteq",
+      "email": "testteq@abv.bg",
+      "password": "testteq@abv.bg@W"
+    }
+  ],
+  "shoppinglist": [
+    {
+      "id": "df63",
+      "name": "milk",
+      "quantity": 1,
+      "userId": "4"
+    },
+    {
+      "id": "30b4",
+      "name": "test123",
+      "quantity": 1,
+      "userId": "3"
+    },
+    {
+      "id": "9db6",
+      "name": "milk",
+      "quantity": 1,
+      "userId": "3"
+    },
+    {
+      "id": "6a89",
+      "name": "Banan",
+      "quantity": 1,
+      "userId": "994f"
+    },
+    {
+      "id": "f654",
+      "name": "Krastavica",
+      "quantity": 1,
+      "userId": "994f"
+    },
+    {
+      "id": "3bf2",
+      "name": "kur",
+      "quantity": 5,
+      "userId": "9ac3"
+    },
+    {
+      "id": "a278",
+      "name": "kurva",
+      "quantity": 1,
+      "userId": "9ac3"
+    },
+    {
+      "id": "3829",
+      "name": "test",
+      "quantity": 1,
+      "userId": "4"
+    },
+    {
+      "id": "7945",
+      "name": "test",
+      "quantity": 1,
+      "userId": "4"
+    },
+    {
+      "id": "1105",
+      "name": "tesstttt",
+      "quantity": 1,
+      "userId": "4"
+    },
+    {
+      "id": "942f",
+      "name": "reqr",
+      "quantity": 1,
+      "userId": "4"
+    }
+  ]
+}
