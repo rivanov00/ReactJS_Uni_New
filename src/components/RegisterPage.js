@@ -7,11 +7,16 @@ function RegisterPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [message, setMessage] = useState('');
+  const [messageType, setMessageType] = useState('');
 
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    setMessage('');
+    setMessageType('');
 
     const errors = [];
 
@@ -36,7 +41,8 @@ function RegisterPage() {
     }
 
     if (errors.length > 0) {
-      alert("Password requirements not met:\n\n" + errors.join('\n'));
+      setMessage("Password requirements not met:\n\n" + errors.join('\n'));
+      setMessageType('error');
       setPassword('');
       setConfirmPassword('');
       return;
@@ -55,17 +61,25 @@ function RegisterPage() {
 
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({ message: 'Unknown error' }));
-        alert(`Registration failed: ${errorData.message || response.statusText}`);
+        setMessage(`Registration failed: ${errorData.message || response.statusText}`);
+        setMessageType('error');
         return;
       }
 
       const registeredUser = await response.json();
+      console.log('Registration successful:', registeredUser);
 
-      alert('Registration successful! Please log in.');
-      navigate('/login');
+      setMessage('Registration successful! You will be redirected to the login page.');
+      setMessageType('success');
+
+      setTimeout(() => {
+        navigate('/login');
+      }, 2000);
 
     } catch (error) {
-      alert('An error occurred during registration.');
+      console.error('Registration attempt failed:', error);
+      setMessage('An error occurred during registration.');
+      setMessageType('error');
     }
 
     setUsername('');
@@ -77,8 +91,15 @@ function RegisterPage() {
   return (
     <div className="register-container">
       <h1 className="register-title">Register</h1>
+
+      {message && (
+        <p className={`login-message ${messageType}`}>
+          {message}
+        </p>
+      )}
+
       <form className="register-form" onSubmit={handleSubmit}>
-        <div>
+        <div className="form-group">
           <label className="register-label" htmlFor="reg-username">Username:</label>
           <input
             className="register-input"
@@ -89,7 +110,7 @@ function RegisterPage() {
             required
           />
         </div>
-        <div>
+        <div className="form-group">
           <label className="register-label" htmlFor="reg-email">Email:</label>
           <input
             className="register-input"
@@ -100,7 +121,7 @@ function RegisterPage() {
             required
           />
         </div>
-        <div>
+        <div className="form-group">
           <label className="register-label" htmlFor="reg-password">Password:</label>
           <input
             className="register-input"
@@ -111,7 +132,7 @@ function RegisterPage() {
             required
           />
         </div>
-        <div>
+        <div className="form-group">
           <label className="register-label" htmlFor="confirm-password">Confirm Password:</label>
           <input
             className="register-input"

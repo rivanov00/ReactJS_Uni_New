@@ -31,6 +31,36 @@
       "username": "niki",
       "email": "nikikurvv@abv.bg",
       "password": "Kur12345!"
+    },
+    {
+      "id": "6381",
+      "username": "test",
+      "email": "test@abv.bg",
+      "password": "TEST%#15813"
+    },
+    {
+      "id": "ef48",
+      "username": "TEST%#15813",
+      "email": "TEST%#15813@ABV.BG",
+      "password": "TEST%#15813"
+    },
+    {
+      "id": "1c7b",
+      "username": "veqveq",
+      "email": "veq@abv.bg",
+      "password": "TEST%#15813"
+    },
+    {
+      "id": "dabc",
+      "username": "teqteqt",
+      "email": "teqteq@abv.bg",
+      "password": "531F134!"
+    },
+    {
+      "id": "f61f",
+      "username": "teqveq",
+      "email": "vjeqiv@abv.bg",
+      "password": "531F134!"
     }
   ],
   "shoppinglist": [
