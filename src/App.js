@@ -1,12 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-// Import your components
 import Navbar from './components/Navbar';
 import LoginPage from './components/LoginPage';
 import RegisterPage from './components/RegisterPage';
 import Home from './components/Home';
 import PrivateRoute from './components/PrivateRoute';
+import PageNotFound from './components/404';
+
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
                 </PrivateRoute>
               }
             />
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
         </div>
       </div>

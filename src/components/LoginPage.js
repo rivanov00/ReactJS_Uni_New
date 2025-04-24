@@ -63,6 +63,10 @@ function LoginPage() {
       )}
 
       <form onSubmit={handleSubmit} className="login-form">
+        <p className="login-info-message">
+          The grocery list is only for authorized users, please log-in to use.
+        </p>
+
         <div className="form-group">
           <label htmlFor="login-username-email" className="login-label">Username or Email:</label>
           <input
