@@ -1,59 +1,61 @@
 .navbar {
   position: fixed;
-  top: 10px;
-  left: 0px;
-  right: 15px;
+  top: 0px;
   width: 100%;
   z-index: 1000;
   background-color: #054D69;
-  color: 427AA1;
-  padding: 15px 15px;
+  color: #427AA1;
+  padding: 10px 0;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 100px;
+  gap: 120px;
   flex-wrap: wrap;
   transition: background-color 0.3s ease;
 }
 
 .navbar:hover {
-  background-color: #116586;
+  background-color: #0f6586;
 }
 
 .navbar h1 {
   margin: 0;
-  font-size: 1.5em;
+  font-size: 2.5em;
   color: #679436;
   display: flex;
   align-items: center;
-  gap: 20px;
-  flex-shrink: 0;
-  min-width: 0;
-  word-break: break-word;
 }
 
 .navbar h1 img.site-logo {
-    height: 90px;
-    width: 200px;
+    height: 80px;
+    width: 120px;
     vertical-align: middle;
 }
 
 .navbar ul {
   list-style: none;
   margin: 0;
+  margin-left: auto;
   padding: 0;
   display: flex;
-  gap: 20px;
+  gap: 12px;
   flex-shrink: 1;
   min-width: 0;
+  align-items: center;
 }
 
 .navbar a {
   text-decoration: none;
-  color: #ff002c;
+  color: #18bed8;
   font-weight: bold;
-  font-size: 1.1em;
+  font-size: 1.5em;
   transition: color 0.3s ease;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0 5px;
+  border-radius: 4px;
+  border-bottom: none;
+  vertical-align: middle;
 }
 
 .navbar a:hover {
@@ -61,23 +63,41 @@
 }
 
 .navbar a.active {
-  color: #679436;
-  border-bottom: 2px solid yellow;
+  color: #97f0fe;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0 5px;
+  border-radius: 4px;
+  border-bottom: none;
+}
+
+.navbar a.active span {
+    border-bottom: 2px solid #97f0fe;
 }
 
 .nav-logout-button {
-  padding: 5px 10px;
-  background-color: rgba(255, 255, 255, 0.2);
-  color: white;
-  border: 1px solid white;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  font-size: 1em;
+  text-decoration: none;
+  color: #18bed8;
   font-weight: bold;
+  font-size: 1.5em;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: 0 5px;
+  border-radius: 4px;
+  display: inline-block;
+  box-sizing: border-box;
+  outline: none;
+  vertical-align: middle;
+  margin: 0;
 }
 
 .nav-logout-button:hover {
-  background-color: #679436;
-  color: #333;
+  color: #8ebe5b;
+}
+
+.nav-logout-button:active,
+.nav-logout-button:focus {
+  outline: none;
+  border: none;
 }
