@@ -2,25 +2,26 @@ import React, { createContext, useContext, useState } from 'react';
 
 const AuthContext = createContext(null);
 
-export const AuthProvider = ({ children }) => 
+export const AuthProvider = ({ children }) =>
 {
   const [user, setUser] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const login = (userData) => 
-    {
+
+  const login = (userData) =>
+  {
     setUser(userData);
     setIsLoggedIn(true);
-    console.log('User logged in:', userData);
-    };
+    // console.log('User logged in:', userData); // Removed console.log
+  };
 
-  const logout = () => 
-    {
+  const logout = () =>
+  {
     setUser(null);
     setIsLoggedIn(false);
-    console.log('User logged out');
-    };
+    // console.log('User logged out'); // Removed console.log
+  };
 
-  const value = 
+  const value =
   {
     user,
     isLoggedIn,
@@ -31,10 +32,10 @@ export const AuthProvider = ({ children }) =>
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
 
-export const useAuth = () => 
+export const useAuth = () =>
 {
   const context = useContext(AuthContext);
-  if (context === undefined) 
+  if (context === undefined)
   {
     throw new Error('useAuth must be used within an AuthProvider');
   }
