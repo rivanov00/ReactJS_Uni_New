@@ -25,7 +25,6 @@ function Home() {
           const data = await response.json();
           setShoppingListItems(data);
         } catch (error) {
-          console.error("Could not fetch shopping list:", error);
         }
       } else {
         setShoppingListItems([]);
@@ -69,7 +68,6 @@ function Home() {
       });
 
       if (!response.ok) {
-        console.error('API Error:', response.status, response.statusText);
         const errorData = await response.json().catch(() => ({ message: 'Unknown error' }));
         alert(`Failed to add item: ${errorData.message || response.statusText}`);
         return;
@@ -81,13 +79,12 @@ function Home() {
       setNewItemQuantity(1);
 
     } catch (error) {
-      console.error('Error adding item:', error);
       alert('An error occurred while adding the item.');
     }
   };
 
   const handleDeleteItem = async (itemId) => {
-     if (!isLoggedIn || !user || !user.id) {
+      if (!isLoggedIn || !user || !user.id) {
         alert('Please log in to delete items.');
         return;
     }
@@ -97,7 +94,6 @@ function Home() {
       });
 
       if (!response.ok) {
-        console.error('API Error:', response.status, response.statusText);
         const errorData = await response.json().catch(() => ({ message: 'Unknown error' }));
         alert(`Failed to delete item: ${errorData.message || response.statusText}`);
         return;
@@ -106,13 +102,12 @@ function Home() {
       setShoppingListItems(shoppingListItems.filter(item => item.id !== itemId));
 
     } catch (error) {
-      console.error('Error deleting item:', error);
       alert('An error occurred while deleting the item.');
     }
   };
 
   const handleEditClick = (item) => {
-     if (!isLoggedIn || !user || !user.id) {
+      if (!isLoggedIn || !user || !user.id) {
         alert('Please log in to edit items.');
         return;
     }
@@ -130,7 +125,7 @@ function Home() {
   const handleEditSubmit = async (event) => {
     event.preventDefault();
 
-     if (!isLoggedIn || !user || !user.id) {
+      if (!isLoggedIn || !user || !user.id) {
         alert('Please log in to save edits.');
         return;
     }
@@ -162,7 +157,6 @@ function Home() {
       });
 
       if (!response.ok) {
-        console.error('API Error:', response.status, response.statusText);
         const errorData = await response.json().catch(() => ({ message: 'Unknown error' }));
         alert(`Failed to update item: ${errorData.message || response.statusText}`);
         return;
@@ -181,7 +175,6 @@ function Home() {
       setEditingItemQuantity(1);
 
     } catch (error) {
-      console.error('Error updating item:', error);
       alert('An error occurred while updating the item.');
     }
   };
