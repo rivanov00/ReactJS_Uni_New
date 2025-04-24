@@ -6,21 +6,30 @@ import './LoginPage.css';
 function LoginPage() {
   const [usernameOrEmail, setUsernameOrEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [message, setMessage] = useState('');
+  const [messageType, setMessageType] = useState('');
+
   const { login } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    setMessage('');
+    setMessageType('');
+
     console.log('Attempting login with:', { usernameOrEmail });
 
     try {
       const response = await fetch('http://localhost:5000/users');
+
       if (!response.ok) {
         console.error('API Error:', response.status, response.statusText);
-        alert('An error occurred while trying to log in. Please try again.');
+        setMessage('An error occurred while trying to log in. Please try again.');
+        setMessageType('error');
         return;
       }
+
       const users = await response.json();
 
       const foundUser = users.find(user =>
@@ -29,21 +38,34 @@ function LoginPage() {
 
       if (foundUser) {
         login(foundUser);
-        alert('Login successful!');
-        navigate('/');
+        setMessage('Login successful, you will be redirected to your shopping list');
+        setMessageType('success');
+
+        setTimeout(() => {
+          navigate('/');
+        }, 2000);
+
       } else {
-        alert('Invalid username/email or password.');
+        setMessage('Invalid username/email or password.');
+        setMessageType('error');
       }
     } catch (error) {
       console.error('Login attempt failed:', error);
-      alert('An error occurred during login.');
+      setMessage('An error occurred during login.');
+      setMessageType('error');
     }
-    setPassword('');
   };
 
   return (
     <div className="login-container">
       <h2 className="login-title">Login Page</h2>
+
+      {message && (
+        <p className={`login-message ${messageType}`}>
+          {message}
+        </p>
+      )}
+
       <form onSubmit={handleSubmit} className="login-form">
         <div className="form-group">
           <label htmlFor="login-username-email" className="login-label">Username or Email:</label>
