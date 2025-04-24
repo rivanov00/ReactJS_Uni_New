@@ -7,7 +7,7 @@
   align-items: center;
   font-family: 'Segoe UI', sans-serif;
   padding: 20px;
-  padding-top: 90px;
+  padding-top: 30px;
 }
 
 .home-title
@@ -29,15 +29,15 @@
   flex-wrap: wrap;
   width: 100%;
   max-width: 500px;
-  gap: 15px;
-  margin-bottom: 30px;
+  gap: 12px;
+  margin-bottom: 20px;
   align-items: center;
 }
 
 .add-item-form input
 {
   flex-grow: 1;
-  padding: 10px 15px;
+  padding: 10px 4px;
   font-size: 1rem;
   border-radius: 8px;
   border: none;
@@ -145,6 +145,7 @@
   background-color: #ec971f;
 }
 
+<<<<<<< HEAD:src/css/Home.css
 .delete-button
 {
   background-color: #d9534f;
@@ -154,6 +155,15 @@
 .delete-button:hover
 {
   background-color: #c9302c;
+=======
+.delete-button {
+  background-color: #dc1811;
+  color: rgb(255, 255, 255);
+}
+
+.delete-button:hover {
+  background-color: #ff0800;
+>>>>>>> d34a40cdca0c9b4242f8e9b050e62341f45deb48:src/components/Home.css
 }
 
 .edit-item-form
@@ -175,6 +185,7 @@
   box-sizing: border-box;
 }
 
+<<<<<<< HEAD:src/css/Home.css
 .save-button
 {
   background-color: #337ab7;
@@ -211,6 +222,9 @@
 
 .empty-list-message
 {
+=======
+.empty-list-message {
+>>>>>>> d34a40cdca0c9b4242f8e9b050e62341f45deb48:src/components/Home.css
   text-align: center;
   color: #555;
   margin-top: 20px;

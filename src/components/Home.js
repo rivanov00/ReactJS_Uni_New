@@ -240,7 +240,7 @@ function Home() {
                   </div>
                   <div className="item-actions">
                     <button onClick={() => handleEditClick(item)} className="edit-button">Edit</button>
-                    <button onClick={() => handleDeleteItem(item.id)}>Delete</button>
+                    <button onClick={() => handleDeleteItem(item.id)} className="delete-button">Delete</button>
                   </div>
                 </>
               )}

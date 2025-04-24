@@ -89,12 +89,6 @@
   ],
   "shoppinglist": [
     {
-      "id": "df63",
-      "name": "milk",
-      "quantity": 1,
-      "userId": "4"
-    },
-    {
       "id": "30b4",
       "name": "test123",
       "quantity": 1,
