@@ -41,12 +41,15 @@ git clone https://github.com/rivanov00/ReactJS_Uni_New/
 cd ReactJS_Uni_New
 
 Install dependencies:
+
 npm install 
+
 npm install json-server --save-dev
 
 ## ▶️ How to Run the Project
 
 npm start - for react dev server 
+
 npm run api - for JSON server (backend)
 
 The application should open at http://localhost:3000
