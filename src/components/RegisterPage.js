@@ -41,17 +41,14 @@ function RegisterPage() {
     }
 
     if (errors.length > 0) {
-      // --- Updated: Join errors with <br /> for better display ---
       setMessage("Password requirements not met:<br /><br />" + errors.join('<br />'));
       setMessageType('error');
-      // --- End of update ---
       setPassword('');
       setConfirmPassword('');
       return;
     }
 
     try {
-      // --- Start: Check for existing user/email ---
       const existingUsersResponse = await fetch('http://localhost:5000/users');
       if (!existingUsersResponse.ok) {
         console.error('API Error fetching users:', existingUsersResponse.status, existingUsersResponse.statusText);
@@ -67,20 +64,17 @@ function RegisterPage() {
       if (usernameExists && emailExists) {
         setMessage('Registration failed: Username and email are already registered.');
         setMessageType('error');
-        return; // Stop registration
+        return;
       } else if (usernameExists) {
         setMessage('Registration failed: Username is already registered.');
         setMessageType('error');
-        return; // Stop registration
+        return;
       } else if (emailExists) {
         setMessage('Registration failed: Email is already registered.');
         setMessageType('error');
-        return; // Stop registration
+        return;
       }
-      // --- End: Check for existing user/email ---
 
-
-      // If user and email do not exist, proceed with registration
       const newUser = { username, email, password };
 
       const response = await fetch('http://localhost:5000/users', {
@@ -125,13 +119,17 @@ function RegisterPage() {
       <h1 className="register-title">Register</h1>
 
       {message && (
-        // --- Updated: Use dangerouslySetInnerHTML to render HTML (br tags) ---
         <p className={`login-message ${messageType}`} dangerouslySetInnerHTML={{ __html: message }}>
         </p>
-        // --- End of update ---
       )}
 
       <form className="register-form" onSubmit={handleSubmit}>
+        {/* --- Moved: Static Password Requirements Message (now inside the form) --- */}
+        <p className="password-requirements">
+          Password must be at least 8 characters long, contain at least one uppercase letter, and one special character.
+        </p>
+        {/* --- End of moved message --- */}
+
         <div className="form-group">
           <label className="register-label" htmlFor="reg-username">Username:</label>
           <input
