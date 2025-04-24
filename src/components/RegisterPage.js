@@ -41,14 +41,46 @@ function RegisterPage() {
     }
 
     if (errors.length > 0) {
-      setMessage("Password requirements not met:\n\n" + errors.join('\n'));
+      // --- Updated: Join errors with <br /> for better display ---
+      setMessage("Password requirements not met:<br /><br />" + errors.join('<br />'));
       setMessageType('error');
+      // --- End of update ---
       setPassword('');
       setConfirmPassword('');
       return;
     }
 
     try {
+      // --- Start: Check for existing user/email ---
+      const existingUsersResponse = await fetch('http://localhost:5000/users');
+      if (!existingUsersResponse.ok) {
+        console.error('API Error fetching users:', existingUsersResponse.status, existingUsersResponse.statusText);
+        setMessage('An error occurred while checking for existing users.');
+        setMessageType('error');
+        return;
+      }
+      const existingUsers = await existingUsersResponse.json();
+
+      const usernameExists = existingUsers.some(user => user.username === username);
+      const emailExists = existingUsers.some(user => user.email === email);
+
+      if (usernameExists && emailExists) {
+        setMessage('Registration failed: Username and email are already registered.');
+        setMessageType('error');
+        return; // Stop registration
+      } else if (usernameExists) {
+        setMessage('Registration failed: Username is already registered.');
+        setMessageType('error');
+        return; // Stop registration
+      } else if (emailExists) {
+        setMessage('Registration failed: Email is already registered.');
+        setMessageType('error');
+        return; // Stop registration
+      }
+      // --- End: Check for existing user/email ---
+
+
+      // If user and email do not exist, proceed with registration
       const newUser = { username, email, password };
 
       const response = await fetch('http://localhost:5000/users', {
@@ -93,9 +125,10 @@ function RegisterPage() {
       <h1 className="register-title">Register</h1>
 
       {message && (
-        <p className={`login-message ${messageType}`}>
-          {message}
+        // --- Updated: Use dangerouslySetInnerHTML to render HTML (br tags) ---
+        <p className={`login-message ${messageType}`} dangerouslySetInnerHTML={{ __html: message }}>
         </p>
+        // --- End of update ---
       )}
 
       <form className="register-form" onSubmit={handleSubmit}>
