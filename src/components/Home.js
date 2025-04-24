@@ -53,6 +53,30 @@ function Home() {
     }
 
     try {
+      const response = await fetch(`http://localhost:5000/shoppinglist?userId=${user.id}`);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const currentList = await response.json();
+
+      const itemExists = currentList.some(item =>
+        item.name.trim().toLowerCase() === newItemName.trim().toLowerCase()
+      );
+
+      if (itemExists) {
+        alert(`Item "${newItemName.trim()}" is already in your shopping list.`);
+        setNewItemName('');
+        setNewItemQuantity(1);
+        return;
+      }
+
+    } catch (error) {
+       alert('An error occurred while checking for existing items.');
+       return;
+    }
+
+
+    try {
       const newItem = {
         name: newItemName.trim(),
         quantity: parseInt(newItemQuantity, 10),
