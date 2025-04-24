@@ -115,3 +115,16 @@
   color: #721c24;
   border: 2px solid #f5c6cb;
 }
+
+.login-info-message {
+  margin-top: auto;
+  margin-bottom: 0px;
+  font-size: 1em;
+  color: #131313;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+}

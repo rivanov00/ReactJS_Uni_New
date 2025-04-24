@@ -64,7 +64,7 @@ function LoginPage() {
 
       <form onSubmit={handleSubmit} className="login-form">
         <p className="login-info-message">
-          The website is for authorized users only
+          To use the grocery list app you need to be logged in.
         </p>
 
         <div className="form-group">
