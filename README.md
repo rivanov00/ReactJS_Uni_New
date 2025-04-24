@@ -41,29 +41,19 @@ git clone https://github.com/rivanov00/ReactJS_Uni_New/
 cd ReactJS_Uni_New
 
 Install dependencies:
-Navigate into the project directory and install all the required Node.js packages.
+npm install 
+npm install json-server --save-dev
 
-npm install
-
-Set up the database:
-
-Make sure you have a db.json file in the root of your project. This file will serve as your database. It should have a structure like this (you can add initial user or shopping list data):
 ## ▶️ How to Run the Project
-You need to run two things at the same time: the JSON Server (your fake backend) and the React development server.
 
-Start the JSON Server:
-Open your terminal in the project folder and run the server. This will serve your db.json file via a REST API.
+npm start - for react dev server 
+npm run api - for JSON server (backend)
 
-npm run server
+The application should open at http://localhost:3000
 
-(This command assumes you have a script named server in your package.json file that runs json-server --watch db.json --port 5000. If not, you might need to adjust this command or add the script.)
+You can access the database here :
 
-Start the React Application:
-Open a second terminal window (keeping the first one running the JSON Server) in the project folder and start the React development server.
-
-npm start
-
-Your application should now open automatically in your default web browser, typically at http://localhost:3000.
+http://localhost:5000/users & http://localhost:5000/shoppinglist
 
 Remember to keep both terminal windows open while you are working on the project.
 
