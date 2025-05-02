@@ -37,6 +37,8 @@ To get this project running on your local machine, follow these steps:
 Clone the repository:
 Open your terminal or command prompt and clone the project from your GitHub repository.
 
+winget install --id Git.Git -e --source winget 
+
 git clone https://github.com/rivanov00/ReactJS_Uni_New/ 
 
 cd ReactJS_Uni_New
