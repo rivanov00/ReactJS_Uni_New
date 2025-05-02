@@ -38,6 +38,7 @@ Clone the repository:
 Open your terminal or command prompt and clone the project from your GitHub repository.
 
 git clone https://github.com/rivanov00/ReactJS_Uni_New/ 
+
 cd ReactJS_Uni_New
 
 Install dependencies:
